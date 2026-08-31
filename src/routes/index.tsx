@@ -7,22 +7,21 @@ import {
   WhatIsAnAiCourse,
 } from "@/components/article/intro";
 import { AtAGlance } from "@/components/article/tables";
+import { WhyNumberOne } from "@/components/article/logicmojo";
+import { InDepthReviews } from "@/components/article/reviews";
+import { AlsoConsidered } from "@/components/article/also-considered";
+import { HowToChoose } from "@/components/article/choose";
+import { StickyCta } from "@/components/article/prose";
 import {
-  HonorableMentions,
-  LogicMojoDeepDive,
-  Reviews,
-} from "@/components/article/reviews";
-import {
-  Authority,
-  Beginners,
+  Author,
   Careers,
-  Closing,
   Faq,
+  FinalVerdict,
   Footer,
   FreeVsPaid,
   IndiaVsGlobal,
-  Quiz,
   RedFlags,
+  Reviewers,
   Roadmap,
   Roi,
 } from "@/components/article/closing";
@@ -56,23 +55,24 @@ function Index() {
           <WhatIsAnAiCourse />
           <SkillStack />
           <AtAGlance />
-          <Reviews />
-          <LogicMojoDeepDive />
-          <HonorableMentions />
+          <WhyNumberOne />
+          <InDepthReviews />
+          <AlsoConsidered />
           <IndiaVsGlobal />
+          <HowToChoose />
           <Careers />
           <Roadmap />
           <RedFlags />
-          <Quiz />
-          <Beginners />
           <FreeVsPaid />
           <Roi />
-          <Authority />
+          <Author />
+          <Reviewers />
           <Faq />
-          <Closing />
+          <FinalVerdict />
         </article>
       </main>
       <Footer />
+      <StickyCta />
     </div>
   );
 }
