@@ -69,59 +69,59 @@ const QUESTIONS: { key: string; q: string; options: [string, string][] }[] = [
 
 function recommend(a: Record<string, string>): { course: string; reason: string } | null {
   if (Object.keys(a).length < QUESTIONS.length) return null;
-  if (a.budget === "free")
+  if (a['budget'] === "free")
     return {
       course: "DeepLearning.AI + Hugging Face + Kaggle Learn",
       reason:
         "Free only means the world-class free stack — build the portfolio yourself, and treat completion as the risk you're taking on.",
     };
-  if (a.goal === "test" || a.budget === "low")
+  if (a['goal'] === "test" || a['budget'] === "low")
     return {
       course: "Google's free ML path or a DeepLearning.AI audit",
       reason:
         "Spend three to four weeks testing whether you enjoy the work before any real money changes hands.",
     };
-  if (a.goal === "literacy")
+  if (a['goal'] === "literacy")
     return {
       course: "DeepLearning.AI short courses or Google AI Essentials",
       reason:
         "You need conceptual clarity and evaluation vocabulary at low hours — not LoRA fine-tuning.",
     };
-  if (a.goal === "credential")
+  if (a['goal'] === "credential")
     return {
-      course: a.market === "abroad" ? "Stanford Online" : "upGrad (IIIT-B) or Great Learning (UT Austin)",
+      course: a['market'] === "abroad" ? "Stanford Online" : "upGrad (IIIT-B) or Great Learning (UT Austin)",
       reason:
         "When the credential is the purchase, buy the brand your promotion process or target market actually recognises.",
     };
-  if (a.market === "india" && a.budget === "premium" && a.hours === "15plus")
+  if (a['market'] === "india" && a['budget'] === "premium" && a['hours'] === "15plus")
     return {
       course: "Scaler",
       reason:
         "India-targeted, premium budget and 15+ hours a week is exactly the profile that gets value from placement infrastructure.",
     };
-  if (a.style === "weekend")
+  if (a['style'] === "weekend")
     return {
       course: "Great Learning PGP-AIML",
       reason: "Weekend live mentor sessions are the only format that fits a weekend-only window well.",
     };
-  if (a.style === "self")
+  if (a['style'] === "self")
     return {
-      course: a.budget === "mid" || a.budget === "high" ? "Udacity Nanodegree" : "IBM AI Engineering Certificate",
+      course: a['budget'] === "mid" || a['budget'] === "high" ? "Udacity Nanodegree" : "IBM AI Engineering Certificate",
       reason:
         "Self-paced with a human reviewing your code is the best version of self-paced; without budget for that, IBM gives the most framework practice per dollar.",
     };
-  if (a.goal === "upgrade" && a.hours === "u6")
+  if (a['goal'] === "upgrade" && a['hours'] === "u6")
     return {
       course: "IBM AI Engineering or Udacity",
       reason: "Under six hours a week, a shorter applied track beats a cohort you'll fall behind in.",
     };
-  if (a.market === "current" && a.background === "engineer")
+  if (a['market'] === "current" && a['background'] === "engineer")
     return {
       course: "Google's AI/ML path + PMLE",
       reason:
         "Adding AI inside a cloud-adjacent role is the one case where a vendor credential is the efficient purchase.",
     };
-  if (a.hours === "10to15" || a.hours === "15plus")
+  if (a['hours'] === "10to15" || a['hours'] === "15plus")
     return {
       course: "LogicMojo AI & ML Course",
       reason:
