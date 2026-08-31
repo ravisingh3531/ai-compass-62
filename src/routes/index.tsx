@@ -1,24 +1,78 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  Hero,
+  Introduction,
+  SkillStack,
+  Toc,
+  WhatIsAnAiCourse,
+} from "@/components/article/intro";
+import { AtAGlance } from "@/components/article/tables";
+import {
+  HonorableMentions,
+  LogicMojoDeepDive,
+  Reviews,
+} from "@/components/article/reviews";
+import {
+  Authority,
+  Beginners,
+  Careers,
+  Closing,
+  Faq,
+  Footer,
+  FreeVsPaid,
+  IndiaVsGlobal,
+  Quiz,
+  RedFlags,
+  Roadmap,
+  Roi,
+} from "@/components/article/closing";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Top 10 Best AI Courses in 2026 (India + Global) — Honest Rankings";
+const DESCRIPTION =
+  "Best AI courses 2026 ranked across India and globally: curriculum depth, GenAI and agents coverage, fees in ₹ and US$, projects, placement reality and honest limitations.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Hero />
+      <main className="mx-auto max-w-4xl px-5 pb-8">
+        <article>
+          <Toc />
+          <Introduction />
+          <WhatIsAnAiCourse />
+          <SkillStack />
+          <AtAGlance />
+          <Reviews />
+          <LogicMojoDeepDive />
+          <HonorableMentions />
+          <IndiaVsGlobal />
+          <Careers />
+          <Roadmap />
+          <RedFlags />
+          <Quiz />
+          <Beginners />
+          <FreeVsPaid />
+          <Roi />
+          <Authority />
+          <Faq />
+          <Closing />
+        </article>
+      </main>
+      <Footer />
     </div>
   );
 }
