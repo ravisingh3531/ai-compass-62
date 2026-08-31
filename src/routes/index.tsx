@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Hero,
+  ReadingProgress,
   Introduction,
   SkillStack,
   Toc,
@@ -47,6 +48,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <ReadingProgress />
       <Hero />
       <main className="mx-auto max-w-4xl px-5 pb-8">
         <article>
