@@ -190,6 +190,10 @@
   animation: sheen 2.6s linear infinite;
 }
 
+@media (scripting: none) {
+  .reveal { opacity: 1; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .float-slow, .shimmer { animation: none; }
