@@ -1,5 +1,48 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  as: Tag = "div",
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  as?: "div" | "section" | "figure" | "header";
+}) {
+  const ref = useRef<HTMLElement | null>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setShown(true);
+            io.disconnect();
+          }
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.06 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const Comp = Tag as any;
+  return (
+    <Comp
+      ref={ref as never}
+      data-shown={shown}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      className={cn("reveal", className)}
+    >
+      {children}
+    </Comp>
+  );
+}
 
 export function Section({
   id,
@@ -14,11 +57,19 @@ export function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <div className="mt-16 border-t border-rule pt-8">
-        {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-        <h2 className="article-h2 mt-2">{title}</h2>
-      </div>
-      {children}
+      <Reveal className="mt-20">
+        <div className="flex items-center gap-3">
+          <span aria-hidden className="h-px flex-1 bg-gradient-to-r from-transparent via-rule to-rule" />
+          {eyebrow ? (
+            <span className="eyebrow rounded-full border border-primary/25 bg-secondary px-3 py-1">
+              {eyebrow}
+            </span>
+          ) : null}
+          <span aria-hidden className="h-px flex-1 bg-gradient-to-l from-transparent via-rule to-rule" />
+        </div>
+        <h2 className="article-h2 mt-4 text-center sm:text-left">{title}</h2>
+      </Reveal>
+      <Reveal delay={80}>{children}</Reveal>
     </section>
   );
 }
@@ -45,15 +96,15 @@ export function Callout({
   label?: string;
 }) {
   const tones = {
-    default: "border-l-primary bg-secondary/60",
-    warn: "border-l-warn bg-highlight/40",
-    good: "border-l-good bg-good/8",
+    default: "border-l-primary bg-gradient-to-br from-secondary to-paper",
+    warn: "border-l-warn bg-gradient-to-br from-highlight/60 to-paper",
+    good: "border-l-good bg-gradient-to-br from-good/10 to-paper",
     quote: "border-l-accent bg-paper",
   } as const;
   return (
     <div
       className={cn(
-        "mt-6 rounded-r-lg border-l-4 px-5 py-4 text-[1.0625rem] leading-[1.7]",
+        "mt-6 rounded-2xl rounded-l-md border border-rule border-l-4 px-5 py-4 text-[1.0625rem] leading-[1.7] shadow-card transition-shadow duration-300 hover:shadow-[var(--shadow-lift)]",
         tones[tone],
       )}
     >
@@ -67,8 +118,12 @@ export function Callout({
 
 export function Pull({ children }: { children: ReactNode }) {
   return (
-    <blockquote className="mt-8 border-l-4 border-l-accent bg-paper px-6 py-5 font-display text-xl leading-snug text-ink shadow-card">
-      {children}
+    <blockquote className="relative mt-10 overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-secondary via-paper to-highlight/40 px-7 py-7 font-display text-xl leading-snug text-ink shadow-card">
+      <span aria-hidden className="pointer-events-none absolute -right-10 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-2xl float-slow" />
+      <span aria-hidden className="absolute left-5 top-3 font-display text-5xl leading-none text-primary/25">
+        “
+      </span>
+      <span className="relative block pl-6">{children}</span>
     </blockquote>
   );
 }
@@ -91,10 +146,10 @@ export function Table({
       {caption ? (
         <figcaption className="eyebrow mb-2 text-muted-foreground">{caption}</figcaption>
       ) : null}
-      <div className="overflow-x-auto rounded-lg border border-rule bg-paper shadow-card">
+      <div className="card-surface overflow-x-auto">
         <table className="data-table">
           <thead>
-            <tr className="bg-primary text-primary-foreground">
+            <tr className="gradient-primary text-primary-foreground">
               {head.map((h) => (
                 <th
                   key={h}
@@ -108,7 +163,7 @@ export function Table({
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} className={i % 2 ? "bg-muted/50" : undefined}>
+              <tr key={i} className={cn("transition-colors hover:bg-highlight/30", i % 2 && "bg-muted/60")}>
                 {r.map((c, j) => (
                   <td
                     key={j}
@@ -140,13 +195,16 @@ export function Verify({ children }: { children: ReactNode }) {
 
 export function Checklist({ items, title }: { items: ReactNode[]; title?: string }) {
   return (
-    <div className="mt-6 rounded-lg border border-rule bg-paper p-5 shadow-card">
+    <div className="card-surface mt-6 p-5">
       {title ? <p className="eyebrow mb-3">{title}</p> : null}
       <ul className="space-y-2">
         {items.map((it, i) => (
           <li key={i} className="flex gap-3 text-[0.95rem] leading-relaxed">
-            <span aria-hidden className="mt-0.5 font-mono text-xs text-primary">
-              [{String(i + 1).padStart(2, "0")}]
+            <span
+              aria-hidden
+              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md gradient-primary font-mono text-[0.6rem] font-medium text-primary-foreground"
+            >
+              {String(i + 1).padStart(2, "0")}
             </span>
             <span>{it}</span>
           </li>
@@ -158,8 +216,8 @@ export function Checklist({ items, title }: { items: ReactNode[]; title?: string
 
 export function ScoreBadge({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-lg border border-rule bg-paper px-4 py-3 text-center shadow-card">
-      <div className="font-display text-2xl font-semibold text-primary">{value}</div>
+    <div className="card-surface px-4 py-4 text-center">
+      <div className="gradient-text font-display text-3xl font-bold">{value}</div>
       <div className="mt-0.5 text-[0.7rem] uppercase tracking-wider text-muted-foreground">
         {label}
       </div>
@@ -180,14 +238,14 @@ export function Cta({
     <a
       href={href}
       className={cn(
-        "mt-6 inline-flex items-center gap-2 rounded-lg px-5 py-3 font-sans text-[0.95rem] font-semibold transition-colors",
+        "group mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-sans text-[0.95rem] font-semibold transition-all duration-300 hover:-translate-y-0.5",
         variant === "primary"
-          ? "bg-primary text-primary-foreground hover:bg-primary/90"
-          : "border border-primary text-primary hover:bg-secondary",
+          ? "gradient-primary text-primary-foreground shadow-card hover:shadow-[var(--shadow-glow)]"
+          : "border border-primary/40 text-primary hover:bg-secondary hover:shadow-card",
       )}
     >
       {children}
-      <span aria-hidden>→</span>
+      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
     </a>
   );
 }
@@ -213,7 +271,7 @@ export function RatingBlock({ p }: { p: Pillars }) {
     ["Value for money (10%)", p.value],
   ];
   return (
-    <div className="mt-6 rounded-xl border-2 border-primary/30 bg-secondary/50 p-5">
+    <div className="mt-6 rounded-2xl border border-primary/25 bg-gradient-to-br from-secondary via-paper to-secondary p-6 shadow-card">
       <p className="eyebrow">Six-pillar rating</p>
       <dl className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
         {rows.map(([k, v]) => (
@@ -238,7 +296,7 @@ export function RatingBlock({ p }: { p: Pillars }) {
 export function ProsCons({ pros, cons }: { pros: string[]; cons: string[] }) {
   return (
     <div className="mt-6 grid gap-4 sm:grid-cols-2">
-      <div className="rounded-lg border border-good/30 bg-good/8 p-5">
+      <div className="rounded-2xl border border-good/30 bg-gradient-to-br from-good/10 to-paper p-5 shadow-card transition-transform duration-300 hover:-translate-y-1">
         <p className="eyebrow">Pros</p>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-relaxed">
           {pros.map((x) => (
@@ -246,7 +304,7 @@ export function ProsCons({ pros, cons }: { pros: string[]; cons: string[] }) {
           ))}
         </ul>
       </div>
-      <div className="rounded-lg border border-warn/40 bg-highlight/40 p-5">
+      <div className="rounded-2xl border border-warn/35 bg-gradient-to-br from-warn/10 to-paper p-5 shadow-card transition-transform duration-300 hover:-translate-y-1">
         <p className="eyebrow">Cons</p>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-relaxed">
           {cons.map((x) => (
@@ -268,7 +326,7 @@ export function StickyCta() {
         </p>
         <a
           href="#logicmojo-deep-dive"
-          className="w-full rounded-lg bg-primary px-4 py-2.5 text-center text-[0.85rem] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+          className="w-full rounded-xl gradient-primary px-5 py-2.5 text-center text-[0.85rem] font-semibold text-primary-foreground shadow-card transition-all duration-300 hover:shadow-[var(--shadow-glow)] sm:w-auto"
         >
           See curriculum, batches &amp; projects →
         </a>
