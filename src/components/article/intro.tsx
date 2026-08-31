@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Callout, Checklist, H3, P, Pull, Reveal, Section, Table, Verify } from "./prose";
+import { AuthorityStrip, FieldNote } from "./eeat";
 
 const TOC = [
   ["problem-solution", "The problem, the cost & my method"],
