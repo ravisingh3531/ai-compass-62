@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Callout, Checklist, H3, P, Pull, Reveal, Section, Table, Verify } from "./prose";
 
 const TOC = [
@@ -130,12 +131,26 @@ export function Hero() {
 }
 
 export function ReadingProgress() {
+  const [pct, setPct] = useState(0);
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setPct(max > 0 ? Math.min(1, h.scrollTop / max) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
   return (
-    <div className="fixed inset-x-0 top-0 z-50 h-[3px] bg-transparent">
+    <div className="fixed inset-x-0 top-0 z-50 h-[3px]">
       <div
-        id="reading-progress"
         className="h-full origin-left gradient-primary"
-        style={{ transform: "scaleX(0)", transition: "transform 120ms linear" }}
+        style={{ transform: `scaleX(${pct})`, transition: "transform 100ms linear" }}
       />
     </div>
   );
