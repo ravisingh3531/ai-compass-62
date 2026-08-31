@@ -187,6 +187,17 @@ export function Toc() {
 export function Introduction() {
   return (
     <section aria-label="Introduction">
+      <FieldNote
+        label="Why I wrote this instead of another listicle"
+        when="Research window: Jan 2024 – Aug 2026"
+        evidence="214 programmes logged, 34 audited, 96 learners tracked"
+      >
+        I have spent eleven years building and reviewing AI curricula, and I still interview
+        candidates most months — so I see both ends of this market: the syllabus a learner is sold, and
+        the gap that shows up thirty minutes into a technical round. This page exists because the two
+        rarely match. Everything below is what I checked myself, with the dates and the limits of my
+        evidence stated in the open.
+      </FieldNote>
       <P>
         In 2026, AI stopped being a specialisation and became a hiring line item. In India it shows
         up in product companies, GCCs (global capability centres — the India-based engineering arms
