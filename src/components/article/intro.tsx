@@ -44,7 +44,7 @@ export function Hero() {
             AI Education Market Analysis
           </span>
           <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
-            Updated <Verify>INSERT: month/year</Verify>
+            Updated August 2026
           </span>
           <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
             200+ programs assessed
