@@ -435,7 +435,7 @@ export function Author() {
             final ten, read every fee and career-support contract in full, and tracked{" "}
             <strong>96 learners</strong> for six to eighteen months after they finished. Where my
             evidence is judgment rather than data, I label it. No provider paid for a position here and
-            there is no affiliate revenue on this page — the method and weights in Section 1 are
+            there is no affiliate revenue on this page — the method and weights in the methodology box are
             published so you can disagree with me using the same evidence.
           </p>
           <p className="mt-3 text-[0.9rem] text-muted-foreground">
@@ -708,7 +708,7 @@ export function FinalVerdict() {
       </P>
       <Callout tone="good" label="Your one concrete next action">
         Take the syllabus PDF of the course you're closest to choosing and audit it against the seven
-        layers in Section 4 — mark each layer hands-on, theory-only, or absent. Then block ten hours
+        layers in Section 4 (the 2026 AI skill stack) — mark each layer hands-on, theory-only, or absent. Then block ten hours
         a week in your calendar for the next month and see whether you actually protect them. Those
         two exercises tell you more than another week of comparison reading.
       </Callout>
