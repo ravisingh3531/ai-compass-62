@@ -529,7 +529,7 @@ export function CourseQuiz() {
   );
 
   return (
-    <Section id="quiz" eyebrow="Interactive" title="AI Course Finder Quiz 2026 — Which of the 10 Fits You?">
+    <Section id="quiz" eyebrow="Section 7 · Interactive" title="AI Course Finder Quiz 2026 — Which of the 10 Fits You?">
       <P>
         Nine questions, thirty seconds, one recommendation. The logic is the same weighting used to
         rank the ten programs — budget realism first, then goal, foundations, format and geography.

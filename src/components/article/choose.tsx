@@ -3,7 +3,7 @@ import { FieldNote } from "./eeat";
 
 export function HowToChoose() {
   return (
-    <Section id="how-to-choose" eyebrow="Section 10" title="How to Choose the Right AI Course for You">
+    <Section id="how-to-choose" eyebrow="Section 12" title="How to Choose the Right AI Course for You">
       <FieldNote
         label="The advice I give in every mentoring call"
         when="Pattern across 96 tracked learners"

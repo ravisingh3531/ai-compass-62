@@ -1225,7 +1225,7 @@ export function InDepthReviews() {
   return (
     <Section
       id="reviews"
-      eyebrow="Section 7"
+      eyebrow="Section 9"
       title="In-Depth Reviews — Top 10 Best AI Courses in 2026 (India + Global)"
     >
       <FieldNote

@@ -128,7 +128,7 @@ export function TrustAndSources() {
   return (
     <Section
       id="trust"
-      eyebrow="Trust & transparency"
+      eyebrow="Section 18 · Trust & transparency"
       title="How I Verified Every Claim on This Page (And What I Could Not Verify)"
     >
       <P>

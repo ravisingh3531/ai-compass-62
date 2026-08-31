@@ -92,7 +92,7 @@ export function AlsoConsidered() {
   return (
     <Section
       id="also-considered"
-      eyebrow="Section 8"
+      eyebrow="Section 10"
       title="Also Considered — 12 Strong Options That Didn't Make the Top 10 (And Why)"
     >
       <FieldNote
