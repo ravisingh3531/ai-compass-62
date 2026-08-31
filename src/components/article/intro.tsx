@@ -20,6 +20,7 @@ const TOC = [
   ["beginners", "If you're starting from zero"],
   ["free-vs-paid", "Free vs. paid: the honest maths"],
   ["roi", "ROI — including the dropout scenario"],
+  ["trust", "How I verified every claim"],
   ["authority", "Author, reviewers, methodology"],
   ["faq", "40 questions, answered"],
 ];
