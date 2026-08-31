@@ -15,7 +15,7 @@ import { InDepthReviews } from "@/components/article/reviews";
 import { AlsoConsidered } from "@/components/article/also-considered";
 import { HowToChoose } from "@/components/article/choose";
 import { StickyCta } from "@/components/article/prose";
-import { TrustAndSources } from "@/components/article/eeat";
+import { AuthorityStrip, TrustAndSources } from "@/components/article/eeat";
 import {
   Author,
   Careers,
@@ -55,7 +55,7 @@ function Index() {
       <Hero />
       <main className="mx-auto max-w-4xl px-5 pb-8">
         <article>
-          <AuthorityStripSlot />
+          <AuthorityStrip />
           <Toc />
           <Introduction />
           <ProblemAndSolution />
