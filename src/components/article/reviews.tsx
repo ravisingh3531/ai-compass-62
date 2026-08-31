@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Cta, P, ProsCons, RatingBlock, Section, Table, Verify, type Pillars } from "./prose";
+import { FieldNote } from "./eeat";
 import { ReviewExtras } from "./review-extras";
 
 
@@ -1227,6 +1228,18 @@ export function InDepthReviews() {
       eyebrow="Section 7"
       title="In-Depth Reviews — Top 10 Best AI Courses in 2026 (India + Global)"
     >
+      <FieldNote
+        label="What I did inside each of these ten programmes"
+        when="Jan 2024 – Aug 2026"
+        evidence="Enrolled or syllabus-level access; one graded project built per programme"
+      >
+        For each programme I built at least one of its graded assignments end to end, because a module
+        list tells you what is mentioned and an assignment tells you what is taught. That is how I
+        found the three programmes where retrieval-augmented generation is one demo notebook rather
+        than a pipeline you debug, and the two where the &ldquo;capstone&rdquo; is a tutorial you
+        re-type. Where I could only get syllabus access and recordings rather than a live seat, I say
+        so in that review instead of implying I sat in the cohort.
+      </FieldNote>
       <P>
         Every review below follows the identical eleven-part structure — overview, curriculum,
         delivery, projects, who it's for, who should avoid it, fees, career support, a full

@@ -1,4 +1,5 @@
 import { Callout, P, Section } from "./prose";
+import { FieldNote } from "./eeat";
 
 const OPTIONS: { name: string; strength: string; why: string; detail: string }[] = [
   {
