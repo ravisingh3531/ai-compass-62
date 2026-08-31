@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import { Callout, Checklist, H3, P, Pull, Reveal, Section, Table, Verify } from "./prose";
 
 const TOC = [
+  ["problem-solution", "The problem, the cost & my method"],
+  ["recommendations", "Research-backed recommendations (#1 pick)"],
   ["what-is-an-ai-course", "What an “AI course” means in 2026"],
   ["skill-stack", "The 2026 AI Skill Stack"],
+  ["beyond-marketing", "Beyond the marketing: how to verify"],
   ["at-a-glance", "Top 10 at a glance + six tables"],
+  ["quiz", "AI Course Finder Quiz 2026"],
   ["reviews", "The ten reviews in full"],
   ["logicmojo-deep-dive", "#1 deep dive: LogicMojo"],
   ["honorable-mentions", "Honorable mentions & exclusions"],
@@ -12,7 +16,6 @@ const TOC = [
   ["careers", "Career paths, ₹ and US$ bands"],
   ["roadmap", "The 12-month roadmap"],
   ["red-flags", "Red flags, EMI and subscription traps"],
-  ["quiz", "The 60-second decision quiz"],
   ["beginners", "If you're starting from zero"],
   ["free-vs-paid", "Free vs. paid: the honest maths"],
   ["roi", "ROI — including the dropout scenario"],

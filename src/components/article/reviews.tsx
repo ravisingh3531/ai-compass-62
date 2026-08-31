@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { Cta, P, ProsCons, RatingBlock, Section, Table, Verify, type Pillars } from "./prose";
+import { ReviewExtras } from "./review-extras";
+
 
 type Review = {
   rank: number;
@@ -1202,10 +1204,13 @@ function ReviewBlock({ r }: { r: Review }) {
           <P key={i}>{x}</P>
         ))}
       </Part>
-      <Part n={9} title="Pros & cons">
+      <Part n={9} title="Beginner suitability, learning support, projects & placement detail">
+        <ReviewExtras rank={r.rank} />
+      </Part>
+      <Part n={10} title="Pros & cons">
         <ProsCons pros={r.pros} cons={r.cons} />
       </Part>
-      <Part n={10} title="Verdict, rating & next step">
+      <Part n={11} title="Verdict, rating & next step">
         <P>{r.verdict}</P>
         <RatingBlock p={r.pillars} />
         <Cta variant={r.rank === 1 ? "primary" : "outline"}>{r.cta}</Cta>
@@ -1213,6 +1218,7 @@ function ReviewBlock({ r }: { r: Review }) {
     </article>
   );
 }
+
 
 export function InDepthReviews() {
   return (
@@ -1222,9 +1228,10 @@ export function InDepthReviews() {
       title="In-Depth Reviews — Top 10 Best AI Courses in 2026 (India + Global)"
     >
       <P>
-        Every review below follows the identical ten-part structure — overview, curriculum, delivery,
-        projects, who it's for, who should avoid it, fees, career support, pros and cons, and a
-        verdict with a six-pillar rating. The #1 pick is not expanded and the lower ranks are not
+        Every review below follows the identical eleven-part structure — overview, curriculum,
+        delivery, projects, who it's for, who should avoid it, fees, career support, a full
+        beginner-suitability and placement breakdown, pros and cons, and a verdict with a six-pillar
+        rating. The #1 pick is not expanded and the lower ranks are not
         compressed; that symmetry is the only way you can compare them fairly.
       </P>
       <Table
