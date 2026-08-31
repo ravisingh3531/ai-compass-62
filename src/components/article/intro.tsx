@@ -1,4 +1,4 @@
-import { Callout, Checklist, H3, P, Pull, Section, Table, Verify } from "./prose";
+import { Callout, Checklist, H3, P, Pull, Reveal, Section, Table, Verify } from "./prose";
 
 const TOC = [
   ["what-is-an-ai-course", "What an “AI course” means in 2026"],
@@ -21,38 +21,101 @@ const TOC = [
 
 export function Hero() {
   return (
-    <header className="border-b border-rule bg-paper">
-      <div className="mx-auto max-w-4xl px-5 pb-10 pt-12 sm:pt-16">
-        <p className="eyebrow">
-          AI Education Market Analysis · Updated <Verify>INSERT: month/year</Verify>
-        </p>
-        <h1 className="mt-4 text-[2.1rem] font-bold leading-[1.1] sm:text-5xl">
-          Top 10 Best AI Courses in 2026 (India + Global) — Curriculum Depth, GenAI Coverage,
-          Fees, Projects, and Real Career Outcomes Compared
-        </h1>
-        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-          I assessed 200+ programs — Indian live cohorts, global MOOCs, elite university
-          certificates, vendor paths and free tracks — against one question: will this make you
-          able to build AI, and convert that into a role in <em>your</em> market?
-        </p>
+    <header className="relative overflow-hidden border-b border-rule bg-gradient-to-b from-secondary via-paper to-background">
+      <div aria-hidden className="pointer-events-none absolute inset-0 grid-bg opacity-70" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 -top-28 h-80 w-80 rounded-full bg-primary/15 blur-3xl float-slow"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-20 top-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl float-slow"
+        style={{ animationDelay: "-4s" }}
+      />
+      <div className="relative mx-auto max-w-4xl px-5 pb-14 pt-14 sm:pt-20">
+        <Reveal className="flex flex-wrap items-center gap-2">
+          <span className="eyebrow rounded-full border border-primary/25 bg-paper px-3 py-1 shadow-card">
+            AI Education Market Analysis
+          </span>
+          <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
+            Updated <Verify>INSERT: month/year</Verify>
+          </span>
+          <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
+            200+ programs assessed
+          </span>
+        </Reveal>
 
-        <div className="mt-8 rounded-xl border-2 border-primary bg-secondary/60 p-6 shadow-card">
-          <p className="eyebrow">Quick Answer</p>
-          <p className="mt-2 text-[1.05rem] leading-[1.7]">
-            The <strong>best AI course in 2026</strong> depends on what you're optimising for — and
-            where a course comes from now matters far less than what it makes you able to build.
-            For the deepest end-to-end 2026 curriculum (classical ML through production RAG,
-            fine-tuning, agents and MLOps) with live mentorship at accessible pricing,{" "}
-            <strong>LogicMojo's AI &amp; ML Course ranks #1</strong>. For world-class foundations at
-            near-zero cost, <strong>DeepLearning.AI</strong>. For India-focused placement
-            infrastructure, <strong>Scaler</strong>. For an elite academic credential that travels
-            everywhere, <strong>Stanford Online</strong>. For an Indian university credential,{" "}
-            <strong>upGrad</strong>. For self-paced with human project reviews,{" "}
-            <strong>Udacity</strong>. For a vendor-backed cloud pathway, <strong>Google</strong>.
-            Full comparison — fees in ₹ and US$, honest limitations, and an India vs. global
-            decision framework — below.
+        <Reveal delay={90}>
+          <h1 className="mt-6 text-[2.15rem] font-extrabold leading-[1.08] tracking-tight sm:text-[3.25rem]">
+            Top 10 Best <span className="gradient-text">AI Courses in 2026</span>
+            <span className="block text-ink">(India + Global)</span>
+          </h1>
+          <p className="mt-3 font-display text-base font-medium text-muted-foreground sm:text-lg">
+            Curriculum depth, GenAI coverage, fees, projects and real career outcomes — compared.
           </p>
-        </div>
+        </Reveal>
+
+        <Reveal delay={160}>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">
+            I assessed 200+ programs — Indian live cohorts, global MOOCs, elite university
+            certificates, vendor paths and free tracks — against one question: will this make you
+            able to build AI, and convert that into a role in <em>your</em> market?
+          </p>
+        </Reveal>
+
+        <Reveal delay={220} className="mt-8 grid gap-3 sm:grid-cols-4">
+          {[
+            ["200+", "programs screened"],
+            ["10", "ranked in full"],
+            ["6", "weighted pillars"],
+            ["₹ + $", "dual pricing"],
+          ].map(([v, l]) => (
+            <div key={l} className="card-surface px-4 py-3 text-center">
+              <div className="gradient-text font-display text-2xl font-bold">{v}</div>
+              <div className="mt-0.5 text-[0.68rem] uppercase tracking-wider text-muted-foreground">
+                {l}
+              </div>
+            </div>
+          ))}
+        </Reveal>
+
+        <Reveal delay={280}>
+          <div className="relative mt-9 overflow-hidden rounded-2xl border border-primary/25 bg-paper p-6 shadow-[var(--shadow-glow)]">
+            <span aria-hidden className="absolute inset-x-0 top-0 h-1 gradient-primary" />
+            <p className="eyebrow">Quick Answer</p>
+            <p className="mt-2 text-[1.05rem] leading-[1.75]">
+              The <strong>best AI course in 2026</strong> depends on what you're optimising for — and
+              where a course comes from now matters far less than what it makes you able to build.
+              For the deepest end-to-end 2026 curriculum (classical ML through production RAG,
+              fine-tuning, agents and MLOps) with live mentorship at accessible pricing,{" "}
+              <strong>LogicMojo's AI &amp; ML Course ranks #1</strong>. For world-class foundations
+              at near-zero cost, <strong>DeepLearning.AI</strong>. For India-focused placement
+              infrastructure, <strong>Scaler</strong>. For an elite academic credential that travels
+              everywhere, <strong>Stanford Online</strong>. For an Indian university credential,{" "}
+              <strong>upGrad</strong>. For self-paced with human project reviews,{" "}
+              <strong>Udacity</strong>. For a vendor-backed cloud pathway, <strong>Google</strong>.
+              Full comparison — fees in ₹ and US$, honest limitations, and an India vs. global
+              decision framework — below.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a
+                href="#at-a-glance"
+                className="group inline-flex items-center gap-2 rounded-xl gradient-primary px-5 py-3 text-[0.9rem] font-semibold text-primary-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)]"
+              >
+                See the top 10 table
+                <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+              <a
+                href="#quiz"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/35 px-5 py-3 text-[0.9rem] font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary"
+              >
+                Take the 60-second quiz
+              </a>
+            </div>
+          </div>
+        </Reveal>
 
         <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
           Disclosure: this analysis is published by LogicMojo, which appears at #1. Every scoring
@@ -66,19 +129,31 @@ export function Hero() {
   );
 }
 
+export function ReadingProgress() {
+  return (
+    <div className="fixed inset-x-0 top-0 z-50 h-[3px] bg-transparent">
+      <div
+        id="reading-progress"
+        className="h-full origin-left gradient-primary"
+        style={{ transform: "scaleX(0)", transition: "transform 120ms linear" }}
+      />
+    </div>
+  );
+}
+
 export function Toc() {
   return (
     <nav id="contents" aria-label="Table of contents" className="mt-12 scroll-mt-24">
-      <div className="rounded-xl border border-rule bg-paper p-6 shadow-card">
+      <div className="card-surface p-6">
         <p className="eyebrow">Contents</p>
         <ol className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
           {TOC.map(([id, label], i) => (
             <li key={id} className="text-[0.95rem]">
               <a
                 href={`#${id}`}
-                className="text-foreground/90 underline decoration-rule decoration-2 underline-offset-4 transition-colors hover:text-primary hover:decoration-accent"
+                className="group flex items-baseline gap-2 rounded-lg px-2 py-1.5 text-foreground/90 transition-all duration-200 hover:bg-secondary hover:text-primary"
               >
-                <span className="mr-2 font-mono text-xs text-muted-foreground">
+                <span className="font-mono text-xs text-primary/70 transition-colors group-hover:text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 {label}
