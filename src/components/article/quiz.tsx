@@ -55,7 +55,7 @@ const QUESTIONS: Q[] = [
   {
     key: "placement",
     q: "How important is placement support to you?",
-    hint: "\"Assistance\" and \"guarantee\" are different products — see Section 5.",
+    hint: "\"Assistance\" and \"guarantee\" are different products — see Section 5 on verifying placement claims.",
     options: [
       { v: "must", label: "Must-have" },
       { v: "nice", label: "Nice-to-have" },
@@ -509,7 +509,7 @@ function ResultModal({ r, onClose }: { r: Result; onClose: () => void }) {
             </button>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-            This recommendation is editorial judgment against the criteria in Section 1, not a paid
+            This recommendation is editorial judgment against the criteria in the scoring rubric, not a paid
             placement. Verify fees, batch timings and career-support terms in writing before paying.
           </p>
         </div>
@@ -529,7 +529,7 @@ export function CourseQuiz() {
   );
 
   return (
-    <Section id="quiz" eyebrow="Interactive" title="AI Course Finder Quiz 2026 — Which of the 10 Fits You?">
+    <Section id="quiz" eyebrow="Section 7 · Interactive" title="AI Course Finder Quiz 2026 — Which of the 10 Fits You?">
       <P>
         Nine questions, thirty seconds, one recommendation. The logic is the same weighting used to
         rank the ten programs — budget realism first, then goal, foundations, format and geography.

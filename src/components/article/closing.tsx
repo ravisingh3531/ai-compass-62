@@ -5,7 +5,7 @@ export function IndiaVsGlobal() {
   return (
     <Section
       id="india-vs-global"
-      eyebrow="Section 9"
+      eyebrow="Section 11"
       title="India vs. Global AI Courses — The Honest Head-to-Head"
     >
       <FieldNote
@@ -117,7 +117,7 @@ export function Careers() {
   return (
     <Section
       id="careers"
-      eyebrow="Section 11"
+      eyebrow="Section 13"
       title="AI Career Paths in 2026 — Roles, Salaries and Course Mapping (India + Global)"
     >
       <FieldNote
@@ -217,7 +217,7 @@ export function Roadmap() {
   return (
     <Section
       id="roadmap"
-      eyebrow="Section 12"
+      eyebrow="Section 14"
       title="Your 12-Month AI Learning Roadmap (For People With Jobs, Anywhere)"
     >
       <FieldNote
@@ -263,7 +263,7 @@ export function RedFlags() {
   return (
     <Section
       id="red-flags"
-      eyebrow="Section 13"
+      eyebrow="Section 15"
       title="Red Flags — Spotting a Bad AI Course Before You Pay (India + Global)"
     >
       <FieldNote
@@ -311,7 +311,7 @@ export function RedFlags() {
 
 export function FreeVsPaid() {
   return (
-    <Section id="free-vs-paid" eyebrow="Section 14" title="Free vs. Paid AI Courses in 2026">
+    <Section id="free-vs-paid" eyebrow="Section 16" title="Free vs. Paid AI Courses in 2026">
       <P>
         If you're highly self-directed, already code, and have time rather than money, the 2026 free
         stack is genuinely world-class. Here it is as a usable sequence — this article should be
@@ -355,7 +355,7 @@ export function FreeVsPaid() {
 
 export function Roi() {
   return (
-    <Section id="roi" eyebrow="Section 15" title="ROI Reality — Is an AI Course Worth It in 2026?">
+    <Section id="roi" eyebrow="Section 17" title="ROI Reality — Is an AI Course Worth It in 2026?">
       <Callout label="The formula">
         ROI = (realistic salary delta over 24 months × probability of achieving it) − (fee or
         subscription total + financing cost + opportunity cost of hours). All figures below are{" "}
@@ -412,7 +412,7 @@ export function Roi() {
 
 export function Author() {
   return (
-    <Section id="author" eyebrow="Section 16" title="About the Author">
+    <Section id="author" eyebrow="Section 19" title="About the Author">
       <div className="mt-8 flex flex-col gap-6 rounded-2xl border border-rule bg-paper p-6 shadow-card sm:flex-row">
         <div className="grid h-28 w-28 shrink-0 place-items-center rounded-2xl gradient-primary font-display text-3xl text-primary-foreground shadow-[var(--shadow-glow)]">
           NS
@@ -435,7 +435,7 @@ export function Author() {
             final ten, read every fee and career-support contract in full, and tracked{" "}
             <strong>96 learners</strong> for six to eighteen months after they finished. Where my
             evidence is judgment rather than data, I label it. No provider paid for a position here and
-            there is no affiliate revenue on this page — the method and weights in Section 1 are
+            there is no affiliate revenue on this page — the method and weights in the methodology box are
             published so you can disagree with me using the same evidence.
           </p>
           <p className="mt-3 text-[0.9rem] text-muted-foreground">
@@ -495,7 +495,7 @@ const REVIEWERS: { role: string; company: string; bio: string; quote: string; re
 
 export function Reviewers() {
   return (
-    <Section id="reviewers" eyebrow="Section 17" title="Expert Reviewers">
+    <Section id="reviewers" eyebrow="Section 20" title="Expert Reviewers">
       <P>
         Five practitioners reviewed the framework and the sections closest to their expertise. Names
         and photographs remain placeholders until each reviewer's attribution is confirmed in
@@ -613,7 +613,7 @@ const FAQ_GROUPS: FaqGroup[] = [
 export function Faq() {
   let counter = 0;
   return (
-    <Section id="faq" eyebrow="Section 18" title="Frequently Asked Questions">
+    <Section id="faq" eyebrow="Section 21" title="Frequently Asked Questions">
       <FieldNote
         label="These are the questions I am actually asked"
         when="Compiled from mentoring calls and DMs, 2024–2026"
@@ -680,7 +680,7 @@ export function FinalVerdict() {
   return (
     <Section
       id="final-verdict"
-      eyebrow="Section 19"
+      eyebrow="Section 22"
       title="Final Verdict — The Best AI Course in 2026 (India + Global)"
     >
       <P>
@@ -708,7 +708,7 @@ export function FinalVerdict() {
       </P>
       <Callout tone="good" label="Your one concrete next action">
         Take the syllabus PDF of the course you're closest to choosing and audit it against the seven
-        layers in Section 4 — mark each layer hands-on, theory-only, or absent. Then block ten hours
+        layers in Section 4 (the 2026 AI skill stack) — mark each layer hands-on, theory-only, or absent. Then block ten hours
         a week in your calendar for the next month and see whether you actually protect them. Those
         two exercises tell you more than another week of comparison reading.
       </Callout>

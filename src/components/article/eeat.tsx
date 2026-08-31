@@ -128,7 +128,7 @@ export function TrustAndSources() {
   return (
     <Section
       id="trust"
-      eyebrow="Trust & transparency"
+      eyebrow="Section 18 · Trust & transparency"
       title="How I Verified Every Claim on This Page (And What I Could Not Verify)"
     >
       <P>
@@ -185,7 +185,7 @@ export function TrustAndSources() {
       <P>
         No provider on this page paid for placement, review or ranking position. There is no
         affiliate revenue attached to any link here. I have delivered paid guest sessions in the
-        Indian ed-tech ecosystem in the past, which is exactly why the scoring rubric in Section 1 is
+        Indian ed-tech ecosystem in the past, which is exactly why the scoring rubric in the methodology box is
         published with weights: you can re-run it with your own weights and see whether my order
         holds. Where my judgment is the only evidence — teaching feel, mentor quality, cohort energy
         — I say so instead of implying data.

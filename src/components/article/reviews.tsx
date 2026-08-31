@@ -1225,7 +1225,7 @@ export function InDepthReviews() {
   return (
     <Section
       id="reviews"
-      eyebrow="Section 7"
+      eyebrow="Section 9"
       title="In-Depth Reviews — Top 10 Best AI Courses in 2026 (India + Global)"
     >
       <FieldNote
@@ -1256,7 +1256,7 @@ export function InDepthReviews() {
           ["Project rigour", "20%", "Value for money", "10%"],
         ]}
         firstColSticky={false}
-        note="Scores are this evaluation's editorial judgment against the criteria in Section 1, not survey data or vendor-supplied figures."
+        note="Scores are this evaluation's editorial judgment against the criteria in the scoring rubric, not survey data or vendor-supplied figures."
       />
       {REVIEWS.map((r) => (
         <ReviewBlock key={r.rank} r={r} />

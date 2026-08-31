@@ -545,7 +545,7 @@ export function WhatIsAnAiCourse() {
         <strong>Placement geography:</strong> support networks are almost never global.{" "}
         <strong>Refresh speed:</strong> specialists update in weeks, universities in semesters.
         Neither side wins universally — your target market and your discipline profile decide. Full
-        head-to-head in Section 9.
+        head-to-head in Section 11.
       </P>
     </Section>
   );

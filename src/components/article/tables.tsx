@@ -110,7 +110,7 @@ export function AtAGlance() {
   return (
     <Section
       id="at-a-glance"
-      eyebrow="Section 5"
+      eyebrow="Section 6"
       title="Top 10 Best AI Courses in 2026 (India + Global) — At a Glance"
     >
       <FieldNote

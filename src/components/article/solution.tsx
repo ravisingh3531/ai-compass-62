@@ -7,7 +7,7 @@ export function ProblemAndSolution() {
   return (
     <Section
       id="problem-solution"
-      eyebrow="Section 2"
+      eyebrow="Section 1"
       title="The Problem, The Cost of Getting It Wrong, and My Experience-Based Solution"
     >
       <FieldNote
@@ -130,7 +130,7 @@ export function Recommendations() {
   return (
     <Section
       id="recommendations"
-      eyebrow="Section 3"
+      eyebrow="Section 2"
       title="My Research-Backed Recommendations — Why LogicMojo's AI & ML Course Leads for AI + GenAI Beginners"
     >
       <FieldNote

@@ -83,7 +83,7 @@ export function WhyNumberOne() {
   return (
     <Section
       id="logicmojo-deep-dive"
-      eyebrow="Section 6 · Editor's deep dive"
+      eyebrow="Section 8 · Editor's deep dive"
       title="Why LogicMojo Is Ranked #1 Among AI Courses in 2026 (India + Global)"
     >
       <FieldNote
