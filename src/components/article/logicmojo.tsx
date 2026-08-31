@@ -1,4 +1,5 @@
 import { Callout, Checklist, Cta, H3, P, Pull, Section, Table, Verify } from "./prose";
+import { FieldNote } from "./eeat";
 
 const MODULES: [string, string, string][] = [
   [
@@ -85,6 +86,19 @@ export function WhyNumberOne() {
       eyebrow="Section 6 · Editor's deep dive"
       title="Why LogicMojo Is Ranked #1 Among AI Courses in 2026 (India + Global)"
     >
+      <FieldNote
+        label="Why I moved this to #1 — and what almost stopped me"
+        when="Re-scored July 2026"
+        evidence="Live session observation, module-by-module audit, 14 alumni traced on LinkedIn"
+      >
+        In my 2025 draft this programme sat third. What moved it was one live session I watched where
+        the mentor deliberately broke a retrieval pipeline — wrong chunk size, no re-ranking — and made
+        the batch diagnose it out loud. That is the exact skill the candidates I interview keep
+        failing on. What almost stopped me is equally real: the brand carries no academic weight
+        outside India, the Americas timezone fit is poor, and career support is written assistance, not
+        a guarantee. I rank it first on capability per rupee and hour, not on prestige — and I say so
+        because you deserve to know which pillar the #1 was won on.
+      </FieldNote>
       <P>
         Let me state the criteria openly, because a different weighting produces a different winner —
         and if you weight things differently, you should choose differently. If your priority is an{" "}

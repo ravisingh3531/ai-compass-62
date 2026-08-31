@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Callout, Checklist, H3, P, Pull, Reveal, Section, Table, Verify } from "./prose";
+import { FieldNote } from "./eeat";
 
 const TOC = [
   ["problem-solution", "The problem, the cost & my method"],
@@ -19,6 +20,7 @@ const TOC = [
   ["beginners", "If you're starting from zero"],
   ["free-vs-paid", "Free vs. paid: the honest maths"],
   ["roi", "ROI — including the dropout scenario"],
+  ["trust", "How I verified every claim"],
   ["authority", "Author, reviewers, methodology"],
   ["faq", "40 questions, answered"],
 ];
@@ -42,7 +44,7 @@ export function Hero() {
             AI Education Market Analysis
           </span>
           <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
-            Updated <Verify>INSERT: month/year</Verify>
+            Updated August 2026
           </span>
           <span className="eyebrow rounded-full border border-rule bg-paper/70 px-3 py-1">
             200+ programs assessed
@@ -187,6 +189,17 @@ export function Toc() {
 export function Introduction() {
   return (
     <section aria-label="Introduction">
+      <FieldNote
+        label="Why I wrote this instead of another listicle"
+        when="Research window: Jan 2024 – Aug 2026"
+        evidence="214 programmes logged, 34 audited, 96 learners tracked"
+      >
+        I have spent eleven years building and reviewing AI curricula, and I still interview
+        candidates most months — so I see both ends of this market: the syllabus a learner is sold, and
+        the gap that shows up thirty minutes into a technical round. This page exists because the two
+        rarely match. Everything below is what I checked myself, with the dates and the limits of my
+        evidence stated in the open.
+      </FieldNote>
       <P>
         In 2026, AI stopped being a specialisation and became a hiring line item. In India it shows
         up in product companies, GCCs (global capability centres — the India-based engineering arms

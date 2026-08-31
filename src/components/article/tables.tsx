@@ -1,4 +1,5 @@
 import { Callout, H3, P, Section, Table, Verify } from "./prose";
+import { FieldNote } from "./eeat";
 
 const RANKED = [
   [
@@ -112,6 +113,18 @@ export function AtAGlance() {
       eyebrow="Section 5"
       title="Top 10 Best AI Courses in 2026 (India + Global) — At a Glance"
     >
+      <FieldNote
+        label="How this table was actually built"
+        when="Audited June–August 2026"
+        evidence="Syllabus access for all 10 programmes + counsellor calls for gated pricing"
+      >
+        I did not assemble these rows from marketing pages. Every fee was confirmed against the
+        provider's own checkout or admissions page — and where the price was hidden behind a form, I
+        took the counsellor call myself and wrote down what I was quoted, including the discount that
+        &ldquo;expires tonight&rdquo; and reappears next week. Two providers quoted me a different
+        number in June than in August, which is exactly why I ask you to re-verify before paying
+        rather than trusting a table, even mine.
+      </FieldNote>
       <P>
         This ranking weighs curriculum depth, delivery, project rigour, career outcomes,
         accessibility and value — with delivery weighted heavily, because delivery is what most

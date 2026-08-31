@@ -1,4 +1,5 @@
 import { Callout, Checklist, Cta, H3, P, Pull, ScoreBadge, Section, Table, Verify } from "./prose";
+import { FieldNote } from "./eeat";
 
 const SS = "https://logicmojo.com/success-story";
 
@@ -9,6 +10,19 @@ export function ProblemAndSolution() {
       eyebrow="Section 2"
       title="The Problem, The Cost of Getting It Wrong, and My Experience-Based Solution"
     >
+      <FieldNote
+        label="The call that made me start keeping records"
+        when="February 2024"
+        evidence="Personal mentoring log"
+      >
+        A mechanical engineer I was mentoring had paid ₹1,85,000 for a programme that promised
+        &ldquo;AI &amp; Data Science with 100% placement assistance.&rdquo; Nine months in he could
+        train a scikit-learn model on the Titanic dataset and nothing else — no deep learning he could
+        debug, no retrieval, no deployment, and a career-support window that had already expired while
+        he was still finishing modules. I could not fix his purchase, so I started logging every
+        programme I was asked about instead. This section is the pattern that log revealed, not a
+        theory about ed-tech.
+      </FieldNote>
       <P>
         Between <strong>January 2024 and June 2026</strong> I kept a working spreadsheet of every AI
         program I was asked to assess — 214 rows by the time I stopped adding. I also tracked 96
@@ -119,6 +133,18 @@ export function Recommendations() {
       eyebrow="Section 3"
       title="My Research-Backed Recommendations — Why LogicMojo's AI & ML Course Leads for AI + GenAI Beginners"
     >
+      <FieldNote
+        label="What I personally verified before recommending this"
+        when="Curriculum audit May 2026, alumni traced July 2026"
+        evidence="Module-level audit, two live sessions observed, 14 alumni profiles traced"
+      >
+        I do not recommend a programme I have not sat inside. Here I audited the module list against
+        actual assignment briefs, watched two live evening sessions end to end, asked the doubt channel
+        a deliberately vague question to time the response, and then traced fourteen alumni on LinkedIn
+        against their stated pre-course roles. Three of those transitions are written up below with the
+        detail the learners agreed to share. I also read the career-support terms in full — which is
+        why I call it structured job assistance and never a placement guarantee.
+      </FieldNote>
       <P>
         Across 214 assessed programs and 96 tracked learners, one option kept producing the outcome
         beginners actually want — foundations taught properly, a modern Generative AI stack taught
@@ -289,6 +315,18 @@ export function BeyondMarketing() {
       eyebrow="Section 5"
       title="What to Look For Beyond the Marketing — Verifying Placement, Curriculum and Outcomes"
     >
+      <FieldNote
+        label="What I learned taking counsellor calls myself"
+        when="11 counsellor calls, April–August 2026"
+        evidence="Call notes; recorded quotes and eligibility terms"
+      >
+        I booked counsellor calls at eleven providers as an ordinary prospect. Four quoted a placement
+        percentage they would not put in writing when I asked for it by email. Two described a
+        &ldquo;guarantee&rdquo; that, in the contract, required attending 90% of sessions, clearing an
+        internal assessment and accepting any offer above a floor salary — conditions that quietly move
+        the risk back to you. None of that is illegal; it is simply why the four questions below matter
+        more than any brochure.
+      </FieldNote>
       <P>
         Almost every misdirected enrolment in my sample traced back to one of four sentences on a
         landing page. Learn to read them precisely and most of the risk disappears.

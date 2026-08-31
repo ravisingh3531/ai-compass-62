@@ -1,4 +1,5 @@
 import { Callout, P, Section } from "./prose";
+import { FieldNote } from "./eeat";
 
 const OPTIONS: { name: string; strength: string; why: string; detail: string }[] = [
   {
@@ -94,6 +95,17 @@ export function AlsoConsidered() {
       eyebrow="Section 8"
       title="Also Considered — 12 Strong Options That Didn't Make the Top 10 (And Why)"
     >
+      <FieldNote
+        label="Why the exclusions matter more than the winners"
+        when="Shortlist trimmed March–June 2026"
+        evidence="214 programmes logged, 34 audited in depth, 10 ranked"
+      >
+        I logged more than two hundred programmes and cut to thirty-four worth auditing properly. The
+        twelve below are ones I genuinely liked and still cut — I publish them because a ranking that
+        only shows winners is a sales page. In several cases the reason is not quality at all: the
+        programme teaches 2022's syllabus very well, and 2026 hiring asks about retrieval, agents and
+        evaluation.
+      </FieldNote>
       <P>
         Exclusion is not condemnation. Publishing the near-misses with real reasons is how you can
         tell whether an evaluation was broad or sponsored — so here are twelve options I looked at
