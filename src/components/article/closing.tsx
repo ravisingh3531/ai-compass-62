@@ -568,28 +568,50 @@ export function Faq() {
         Forty questions, grouped, each answered directly in the first sentence. Where a question has
         an uncomfortable answer, the uncomfortable answer is the one given.
       </P>
-      {FAQ_GROUPS.map((g) => (
+      {FAQ_GROUPS.map((g, gi) => (
         <div key={g.heading}>
           <H3>{g.heading}</H3>
-          <div className="mt-4 divide-y divide-rule rounded-lg border border-rule bg-paper shadow-card">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {g.items.map(([q, a]) => {
               counter += 1;
               const n = counter;
+              const tones = [
+                "border-primary/25 bg-gradient-to-br from-secondary to-paper",
+                "border-good/30 bg-gradient-to-br from-good/8 to-paper",
+                "border-warn/30 bg-gradient-to-br from-highlight/50 to-paper",
+                "border-rule bg-gradient-to-br from-muted/70 to-paper",
+              ];
               return (
-                <details key={q} className="px-5 py-4" open={n <= 2}>
-                  <summary className="cursor-pointer list-none font-display text-[1.05rem] font-semibold text-ink">
-                    <span className="mr-2 font-mono text-xs text-accent">
+                <details
+                  key={q}
+                  open={n <= 2}
+                  className={
+                    "group rounded-2xl border p-5 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] " +
+                    tones[(gi + n) % tones.length]
+                  }
+                >
+                  <summary className="flex cursor-pointer list-none items-start gap-3 font-display text-[1.02rem] font-semibold leading-snug text-ink">
+                    <span className="gradient-primary mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg font-mono text-[0.62rem] font-bold text-primary-foreground">
                       {String(n).padStart(2, "0")}
                     </span>
-                    {q}
+                    <span className="flex-1">{q}</span>
+                    <span
+                      aria-hidden
+                      className="mt-0.5 text-primary transition-transform duration-300 group-open:rotate-45"
+                    >
+                      +
+                    </span>
                   </summary>
-                  <p className="mt-2 pl-8 text-[0.95rem] leading-relaxed text-foreground/85">{a}</p>
+                  <p className="mt-3 border-t border-rule/70 pt-3 text-[0.92rem] leading-relaxed text-foreground/85">
+                    {a}
+                  </p>
                 </details>
               );
             })}
           </div>
         </div>
       ))}
+
     </Section>
   );
 }

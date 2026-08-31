@@ -8,6 +8,8 @@ import {
   WhatIsAnAiCourse,
 } from "@/components/article/intro";
 import { AtAGlance } from "@/components/article/tables";
+import { BeyondMarketing, ProblemAndSolution, Recommendations } from "@/components/article/solution";
+import { CourseQuiz } from "@/components/article/quiz";
 import { WhyNumberOne } from "@/components/article/logicmojo";
 import { InDepthReviews } from "@/components/article/reviews";
 import { AlsoConsidered } from "@/components/article/also-considered";
@@ -54,9 +56,13 @@ function Index() {
         <article>
           <Toc />
           <Introduction />
+          <ProblemAndSolution />
+          <Recommendations />
           <WhatIsAnAiCourse />
           <SkillStack />
+          <BeyondMarketing />
           <AtAGlance />
+          <CourseQuiz />
           <WhyNumberOne />
           <InDepthReviews />
           <AlsoConsidered />

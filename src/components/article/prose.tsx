@@ -150,9 +150,10 @@ export function Table({
         <table className="data-table">
           <thead>
             <tr className="gradient-primary text-primary-foreground">
-              {head.map((h) => (
+              {head.map((h, hi) => (
                 <th
-                  key={h}
+                  key={`${hi}-${h}`}
+
                   scope="col"
                   className="whitespace-nowrap px-3 py-2.5 font-sans text-[0.72rem] font-semibold uppercase tracking-wider"
                 >
