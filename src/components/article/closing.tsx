@@ -1,56 +1,101 @@
-import { Callout, Checklist, H3, P, Pull, ScoreBadge, Section, Table, Verify } from "./prose";
+import { Callout, Checklist, Cta, H3, P, Pull, ScoreBadge, Section, Table, Verify } from "./prose";
 
 export function IndiaVsGlobal() {
   return (
     <Section
       id="india-vs-global"
-      eyebrow="Section 8"
-      title="Indian AI Course or International Certification — The Honest Head-to-Head"
+      eyebrow="Section 9"
+      title="India vs. Global AI Courses — The Honest Head-to-Head"
     >
       <P>
-        This is the question I'm asked most, and it is almost always asked backwards. The right
-        question isn't “which is better?” It's “which market will read my credential, and which
-        format will get me to the finish line?”
+        This is the section this page exists for, and the question is almost always asked backwards.
+        “Indian or global?” is really <strong>four questions</strong>: where will you work, what
+        payment model survives your discipline, how much mentorship density do you need, and which
+        credential actually signals in your target market?
       </P>
       <Table
-        head={["Dimension", "Indian programs", "Global programs", "Who wins, honestly"]}
+        head={["Dimension", "Indian programs (typical)", "Global programs (typical)"]}
         rows={[
-          ["Price in local terms", "₹40K–₹4L; EMI normal; often negotiable", "US$59/mo to US$20K; subscriptions or per-course", "India, decisively, for rupee earners"],
-          ["Mentorship density per unit of money", "Very high — live classes, 1:1 mentors, code review", "Low — forums, occasional reviewer feedback", "India"],
-          ["Curriculum refresh speed", "Fast; specialists update in weeks", "Fast for specialists, slow for universities", "Tie (specialists both sides)"],
-          ["Foundational rigour and theory", "Good to strong; occasionally rushed", "Strongest — Stanford, DeepLearning.AI", "Global"],
-          ["Production / MLOps depth", "Strong in cohort programs; employability-driven", "Weak outside vendor and specialist tracks", "India"],
-          ["Timezone fit", "IST; great for India, Gulf, SE Asia", "Any timezone (self-paced)", "Depends on where you sit"],
-          ["Credential recognition in India", "High for known Indian brands; IIT/IIIT tags screen well", "Stanford/Google recognised; mid-tier US brands often unknown", "Tie"],
-          ["Credential recognition in US/Europe", "Low brand recognition; capability still travels", "High", "Global"],
-          ["Placement support geography", "India-centric, sometimes genuinely useful", "Almost none anywhere", "India"],
-          ["Completion probability", "High in live cohorts", "Low in self-paced, moderate with deadlines", "India"],
-          ["Flexibility if your schedule collapses", "Rigid; catch-up depends on policy", "Total flexibility", "Global"],
+          ["Price for comparable depth", "₹40K–₹4L one-time, EMI standard", "US$0–US$59/mo subscriptions, up to US$5,000+ certificates"],
+          ["Mentorship density", "High — live cohorts, code review, doubt SLAs", "Low–Medium — forums and reviewers (Udacity excepted)"],
+          ["Timezone", "IST-anchored live sessions", "Timezone-agnostic self-paced"],
+          ["Credential recognition in India", "Strong for known brands and IIT/IIIT tags", "Strong for elite names; MOOC certificates weak alone"],
+          ["Credential recognition globally", "Weak-to-moderate; the portfolio travels", "Strong for elite and vendor names; MOOC certificates still weak"],
+          ["Placement support", "India-focused, sometimes genuinely operational", "Rare; career “services” are light"],
+          ["Refresh speed", "Fast at specialists; slow at university-affiliated", "Fast at DeepLearning.AI and vendors; slow at universities"],
+          ["Payment risk", "EMI outlives dropout", "Subscriptions auto-renew past motivation"],
+          ["Completion drivers", "Cohort accountability", "Deadlines (Stanford) or raw discipline (everyone else)"],
+        ]}
+      />
+
+      <H3>When an Indian program wins</H3>
+      <P>
+        You'll work in India or in IST-adjacent remote roles. You need live mentorship and code
+        review to actually finish. You want rupee pricing and EMI rather than a dollar subscription.
+        You need on-ramps in Python and mathematics. You want placement support from people who
+        understand how Indian hiring loops actually run.
+      </P>
+      <H3>When a global program wins</H3>
+      <P>
+        You need a brand that clears credential-led screening in the US or Europe. You need
+        self-pacing across an awkward timezone. Your budget is near zero, or employer-funded in
+        dollars. You want a vendor credential for cloud roles. You're on a research track where
+        academic rigour is the point.
+      </P>
+
+      <H3>Three myths worth killing</H3>
+      <div className="mt-6 space-y-3">
+        {[
+          [
+            "“A Western certificate gets you a Western job.”",
+            "It clears a screen at best. Every engineering leader I spoke to in the US and Europe went straight to the candidate's repository. Certificates open funnels; builds win interviews.",
+          ],
+          [
+            "“An Indian course only works in India.”",
+            "The credential is India-weighted; the capability isn't. Deployed projects, evaluation metrics and clear technical communication travel on merit across every market I looked at.",
+          ],
+          [
+            "“Free global content equals equal outcomes.”",
+            "The 85–90% non-completion typical of open MOOCs is the hidden fee. Free content is not the bottleneck — finishing is, and structure is what you're actually buying when you pay.",
+          ],
+        ].map(([m, a]) => (
+          <div key={m} className="rounded-lg border border-rule bg-paper p-5 shadow-card">
+            <p className="font-display text-lg font-semibold text-ink">{m}</p>
+            <p className="mt-2 text-[0.95rem] leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+
+      <H3>The verdict matrix</H3>
+      <Table
+        head={["Your situation", "What to do", "Why"]}
+        rows={[
+          [
+            "In India, targeting India",
+            "Indian live cohort first; free global content as supplement",
+            "Completion, mentorship density and rupee pricing all favour the cohort; add a free global credential purely as a screening signal.",
+          ],
+          [
+            "In India, targeting abroad or remote",
+            "Capability program + one recognised global credential + aggressive portfolio",
+            "The cohort builds the skill, the global name clears the screen, and the portfolio does the actual convincing in the technical round.",
+          ],
+          [
+            "Abroad, targeting your local market",
+            "Elite or vendor credential + self-built projects — or an IST-workable Indian cohort",
+            "If IST evenings work from your timezone, an Indian cohort is mentorship arbitrage: comparable stack, live human feedback, a fraction of the dollar price.",
+          ],
+          [
+            "Abroad, upskilling inside your current role",
+            "Self-paced global tracks, employer-funded where possible",
+            "You need capability, not a credential, and your employer's reimbursement budget makes subscriptions the efficient instrument.",
+          ],
         ]}
       />
       <Pull>
-        A hiring manager in Berlin will not recognise your Indian institute. They will absolutely
-        recognise a deployed RAG service with evaluation metrics in your GitHub. A hiring manager in
-        Bengaluru will recognise both — and will still ask you to explain your chunking strategy.
+        Capability travels. Brands help at the screen; builds win the interview. That single sentence
+        is the whole India-versus-global answer, and everything above is the evidence for it.
       </Pull>
-      <H3>What 75+ hiring managers told me</H3>
-      <P>
-        I asked the same question everywhere: <em>does it matter where the candidate's course came
-        from?</em> The Indian answers clustered around “the brand gets the CV read, the projects get
-        the offer.” The US and European answers clustered around “I don't look at course names at
-        all unless it's a university I know, and even then I go straight to the repo.” Nobody — not
-        one — said a certificate substituted for a technical screen.
-      </P>
-      <Checklist
-        title="Decision rule by situation"
-        items={[
-          "Working in India, targeting India: an Indian live cohort wins on completion, mentorship and cost. Add one free global credential (DeepLearning.AI or Google) purely as a screening signal.",
-          "In India, targeting US/Europe remote roles: build capability in an Indian cohort, then add a recognisable global name. Your portfolio and English technical communication matter more than either.",
-          "Indian professional in the Gulf or Singapore: IST-adjacent live cohorts are the arbitrage of this entire market — Western-quality stack, live mentorship, a third of the price.",
-          "In the US or Europe on a budget: DeepLearning.AI + Udacity reviews, or an India-based live cohort if you can take IST-evening sessions (early morning your time in Europe).",
-          "Employer paying: take the branded program. Their money, their reporting requirements, and the invoice matters to them.",
-        ]}
-      />
     </Section>
   );
 }
@@ -59,70 +104,122 @@ export function Careers() {
   return (
     <Section
       id="careers"
-      eyebrow="Section 9"
-      title="AI Career Paths in 2026 — Roles, Skills, and Realistic Pay in ₹ and US$"
+      eyebrow="Section 11"
+      title="AI Career Paths in 2026 — Roles, Salaries and Course Mapping (India + Global)"
     >
-      <P>
-        Bands below are directional ranges from market observation, not a survey — treat them as
-        orientation and verify against current listings in your city.{" "}
-        <Verify>VERIFY: salary bands</Verify> Indian figures are total annual CTC; US figures are
-        base salary for full-time roles.
-      </P>
+      <Callout tone="warn" label="Read this before the numbers">
+        Compensation varies enormously by city, country, company type and experience. These are
+        indicative ranges from market observation, not survey data.{" "}
+        <Verify>VERIFY: current market data</Verify> Indian figures are annual CTC in ₹ lakh; global
+        figures are US$ base salary. Nothing here is a promise of any outcome.
+      </Callout>
       <Table
-        head={["Role", "Core skills that get you hired", "India (₹, annual)", "US (US$, base)", "Entry route"]}
+        head={["Role", "Core skills", "Entry bar", "India (₹ LPA)", "Global (US$)", "Best-fit courses"]}
         rows={[
-          ["AI/ML Engineer", "ML + DL, PyTorch, deployment, evaluation, MLOps", "₹8L–₹35L", "$110K–$190K", "Level 4 course + 8–12 projects"],
-          ["GenAI / LLM Application Engineer", "RAG in production, agents, evaluation, guardrails, APIs", "₹10L–₹40L", "$120K–$200K", "Software background + Layer 5 depth"],
-          ["Data Scientist", "Stats, classical ML, experimentation, SQL, communication", "₹7L–₹28L", "$100K–$170K", "Analytics background + ML rigour"],
-          ["MLOps / LLMOps Engineer", "Docker, CI/CD, monitoring, drift, cost, observability", "₹10L–₹35L", "$120K–$185K", "DevOps/cloud background + Layer 6"],
-          ["Computer Vision Engineer", "CNNs, detection, segmentation, edge deployment", "₹8L–₹30L", "$110K–$175K", "Strong DL + domain projects"],
-          ["NLP Engineer", "Tokenisation, embeddings, transformers, fine-tuning", "₹9L–₹32L", "$115K–$180K", "Layer 4–5 depth"],
-          ["AI Product Manager", "AI literacy, scoping, evaluation thinking, cost trade-offs", "₹18L–₹50L", "$130K–$210K", "PM experience + Level 2 literacy"],
-          ["AI Solutions Architect (cloud)", "Vertex/Bedrock/Azure AI, integration, security", "₹20L–₹50L", "$140K–$210K", "Cloud cert + AI depth"],
-          ["Applied Research / Scientist", "Maths, papers, experimentation, publication", "₹15L–₹60L", "$150K–$300K", "Advanced degree or Stanford-tier rigour"],
+          ["Data Analyst (AI-augmented)", "SQL, pandas, visualisation, LLM tooling", "Level 2", "₹4–12L", "$65K–$100K", "Google path, IBM, DeepLearning.AI"],
+          ["Data Scientist", "Stats, classical ML, experimentation, communication", "Level 3", "₹7–28L", "$100K–$170K", "Scaler, upGrad, DeepLearning.AI + projects"],
+          ["ML Engineer", "ML + DL, PyTorch, pipelines, evaluation, deployment", "Level 4", "₹8–35L", "$110K–$190K", "LogicMojo, Scaler, Udacity"],
+          ["AI Engineer", "Full stack: ML → LLM apps → deployment", "Level 4", "₹10–38L", "$115K–$195K", "LogicMojo, Great Learning + self-built deployment"],
+          ["GenAI / LLM Engineer", "Production RAG, prompting, evaluation, guardrails, APIs", "Level 4", "₹10–40L", "$120K–$200K", "LogicMojo; Google for Vertex-shop roles"],
+          ["AI Agent Developer", "Planning, tool use, memory, MCP, frameworks, cost control", "Level 4", "₹12–40L", "$125K–$205K", "LogicMojo + Hugging Face agents course"],
+          ["NLP Engineer", "Tokenisation, embeddings, transformers, fine-tuning", "Level 4", "₹9–32L", "$115K–$180K", "Stanford (theory), LogicMojo (applied)"],
+          ["Computer Vision Engineer", "CNNs, detection, segmentation, edge deployment", "Level 4", "₹8–30L", "$110K–$175K", "LogicMojo, Udacity, Great Learning"],
+          ["MLOps Engineer", "Docker, CI/CD, monitoring, drift, observability, cost", "Level 4", "₹10–35L", "$120K–$185K", "Google path + LogicMojo Layer 6"],
+          ["AI Product Manager", "AI literacy, scoping, evaluation thinking, trade-offs", "Level 2", "₹18–50L", "$130K–$210K", "DeepLearning.AI, Google, Great Learning"],
         ]}
-        note="Indian AI hiring in 2026 concentrates in GCCs, AI-native startups and product companies; IT services hire in volume at lower bands but offer internal mobility. Remote roles pay between the two, priced to your location more than your skill."
+        note="Ranges are indicative and unverified. [VERIFY: current market data] Titles are applied inconsistently across companies — read the job description, not the title."
+      />
+
+      <H3>Where AI hiring actually happens in 2026</H3>
+      <P>
+        <strong>India:</strong> GCCs in Bengaluru, Hyderabad, Pune, NCR and Chennai are the largest
+        growth engine; product companies hire selectively at higher bars; IT services AI practices
+        hire in volume at lower bands but offer internal mobility; AI-native startups pay well and
+        expect shipping ability from day one; BFSI, healthcare and retail adoption is broadening the
+        base.
+      </P>
+      <P>
+        <strong>Globally:</strong> fewer openings against a higher bar, with enterprise adoption
+        broadening the pool of non-tech employers hiring AI people. Remote roles are genuinely real
+        and genuinely competitive — you compete with everyone, and compensation is usually priced to
+        your location rather than your skill.
+      </P>
+      <Callout label="Honest counterpoint">
+        Entry-level AI hiring is competitive everywhere. Portfolios beat certificates consistently,
+        “AI role” titles are applied inconsistently, and a first role adjacent to AI — data
+        engineering, analytics, platform work — is often a faster route in than holding out for a
+        title with “AI” in it.
+      </Callout>
+
+      <H3>What interviewers actually ask</H3>
+      <Checklist
+        title="Fifteen questions I heard repeatedly from hiring managers"
+        items={[
+          "Why did you choose that metric and not accuracy?",
+          "How did you handle class imbalance, and what did it cost you?",
+          "Explain attention to a non-technical stakeholder in ninety seconds.",
+          "Design a RAG system for 50,000 internal documents. Where does it break?",
+          "What chunking strategy did you use, and why that one?",
+          "How would you detect hallucination in production?",
+          "When would you fine-tune instead of using RAG, and how would you prove it helped?",
+          "How would you serve this model at scale, and what does it cost per thousand requests?",
+          "What would you monitor after deployment, and what alert would you set?",
+          "How do you evaluate an agent that takes ten steps?",
+          "Walk me through a training run that failed and what you changed.",
+          "How do you keep PII out of prompts and logs?",
+          "What's the trade-off between an open-weight model and a hosted API here?",
+          "What did you get wrong in this project, and what did you change?",
+          "If you had two more weeks, what would you improve first?",
+        ]}
       />
     </Section>
   );
 }
 
 export function Roadmap() {
-  const months = [
-    ["Months 1–2", "Foundations", "Python, pandas, SQL, Git, stats and linear algebra intuition. Ship 2 small analysis projects to GitHub with real READMEs."],
-    ["Months 3–4", "Core ML", "Regression through ensembles, feature engineering, cross-validation, metrics, imbalanced data. Two end-to-end ML projects, evaluated properly."],
-    ["Months 5–6", "Deep learning", "Backprop, CNNs, RNNs, transformers and attention. Train something real on a GPU. One CV or NLP project."],
-    ["Months 7–8", "GenAI and RAG", "LLM mechanics, embeddings, vector DBs, RAG from naive to production: chunking, hybrid search, re-ranking, evaluation. Build the RAG system you'll be asked about in every interview."],
-    ["Months 9–10", "Fine-tuning and agents", "SFT, LoRA/QLoRA, DPO on an open-weight model. Agents with LangGraph or CrewAI, MCP tool integration, guardrails and LLM evaluation."],
-    ["Months 11–12", "Production and job hunt", "Docker, FastAPI, CI/CD, monitoring, drift, cost. Deploy two systems. Then portfolio polish, system-design practice, mock interviews, applications."],
+  const months: [string, string, string][] = [
+    ["Month 1", "Python, NumPy/pandas, Git", "A cleaned dataset analysis on GitHub with a real README"],
+    ["Month 2", "Statistics, probability, linear algebra, SQL", "An analysis with documented assumptions and caveats"],
+    ["Month 3", "Core ML and evaluation", "An end-to-end project with a written evaluation rationale"],
+    ["Month 4", "Feature engineering, tuning, imbalance", "A model comparison study with honest reporting"],
+    ["Month 5", "Deep learning, PyTorch", "A trained network plus a debugging write-up"],
+    ["Month 6", "CNNs, computer vision, transfer learning", "A fine-tuned classifier on a custom dataset"],
+    ["Month 7", "NLP, embeddings, transformers", "A transformer-based classifier you can explain"],
+    ["Month 8", "LLM fundamentals, prompting, APIs, open-weight models", "An LLM app with structured outputs and cost accounting"],
+    ["Month 9", "Vector databases, RAG", "A RAG system with an evaluation harness and citations"],
+    ["Month 10", "Fine-tuning (LoRA/QLoRA)", "A fine-tune benchmarked against the base model"],
+    ["Month 11", "Agents, frameworks, MCP", "A tool-using agent that survives adversarial inputs"],
+    ["Month 12", "MLOps and deployment", "A deployed capstone, a polished portfolio, a practised narrative"],
   ];
   return (
     <Section
       id="roadmap"
-      eyebrow="Section 10"
-      title="The 12-Month AI Roadmap for a Working Professional (8–12 Hours a Week)"
+      eyebrow="Section 12"
+      title="Your 12-Month AI Learning Roadmap (For People With Jobs, Anywhere)"
     >
       <P>
-        This is the sequence a good course should follow — and the plan to run yourself if you
-        choose the free route. Skipping ahead to Layer 5 is the most common self-taught mistake: you
-        end up able to call an API and unable to explain why your retrieval returns garbage.
+        Assume ten hours a week. Each month has a focus and — more importantly — a{" "}
+        <strong>deliverable</strong>, because a month without an artefact is a month you can't prove
+        happened.
       </P>
-      <div className="mt-8 space-y-3">
-        {months.map(([when, what, detail]) => (
-          <div key={when} className="flex gap-4 rounded-lg border border-rule bg-paper p-5 shadow-card">
-            <div className="w-28 shrink-0">
-              <p className="eyebrow">{when}</p>
-              <p className="mt-1 font-display text-base font-semibold">{what}</p>
-            </div>
-            <p className="text-[0.95rem] leading-relaxed">{detail}</p>
+      <div className="mt-8 space-y-2.5">
+        {months.map(([m, focus, deliverable]) => (
+          <div key={m} className="flex flex-col gap-2 rounded-lg border border-rule bg-paper p-4 shadow-card sm:flex-row sm:items-baseline">
+            <p className="eyebrow w-20 shrink-0">{m}</p>
+            <p className="w-full shrink-0 font-display text-base font-semibold text-ink sm:w-64">{focus}</p>
+            <p className="text-[0.92rem] leading-relaxed text-foreground/85">→ {deliverable}</p>
           </div>
         ))}
       </div>
-      <Callout label="The Week-3 crash">
-        Almost every dropout I tracked happened in Weeks 3–5, when novelty ends and the maths
-        arrives. Plan for it: reduce scope rather than quitting, protect two fixed sessions a week
-        in your calendar, and tell one person you'll show them your repo on Sunday. Accountability
-        is cheaper than tuition.
+      <Pull>
+        A good course compresses this to five to eight months by removing the search cost. Deciding
+        what to learn next is where most self-taught learners lose their months — not the learning
+        itself.
+      </Pull>
+      <Callout label="Plan for the Week-3 crash">
+        Most dropouts happen in Weeks 3–5, when novelty ends and the mathematics arrives. Reduce
+        scope instead of quitting, protect two fixed sessions a week in your calendar, and tell one
+        person you'll show them your repository on Sunday.
       </Callout>
     </Section>
   );
@@ -132,87 +229,36 @@ export function RedFlags() {
   return (
     <Section
       id="red-flags"
-      eyebrow="Section 11"
-      title="Red Flags — Including the EMI and Subscription Traps That Cost People Most"
+      eyebrow="Section 13"
+      title="Red Flags — Spotting a Bad AI Course Before You Pay (India + Global)"
     >
       <Checklist
-        title="Walk away, or at minimum get it in writing"
+        title="Eighteen signals, in the order I'd check them"
         items={[
-          "“Live” that turns out to be a replay with a TA in chat. Ask to observe a real class for a running batch.",
-          "A syllabus PDF with no version date. If they can't date it, it's old.",
-          "“100% placement guarantee.” No provider controls hiring. Guarantees are marketing or come with conditions you'll fail.",
-          "Hiring-partner logo walls with no named alumni. Ask for two non-testimonial references from the last six months.",
-          "Manufactured scarcity: “two seats left,” a discount expiring in four hours, a counsellor calling three times a day.",
-          "Refusal to put the refund window, deferral policy or doubt SLA in writing before payment.",
-          "An EMI that is a bank or NBFC loan in your name — it survives your dropout, and disputes with the institute don't pause it.",
-          "Subscription pricing with auto-renew and no calendar reminder. Compute monthly fee × realistic months before you subscribe.",
-          "“University certified” where the university neither teaches nor grades. Ask specifically: who teaches, who grades, who signs?",
-          "GenAI content that stops at prompting and one API call — a 2023 course with a 2026 label.",
-          "No MLOps or deployment anywhere in Layer 6. You will fail interviews on this.",
-          "An ISA or income-share contract you haven't had a second person read. These are the most consequential documents in this market.",
+          "Guaranteed job or salary claims — conditional to the point of meaninglessness once you read the terms.",
+          "Refusal to share a module-level syllabus before payment.",
+          "“Live” classes that turn out to be recordings with a TA in chat.",
+          "No last-updated date anywhere. In AI, undated means outdated.",
+          "No RAG, agents, fine-tuning or MLOps in a 2026 syllabus.",
+          "“10+ projects” with no descriptions of what they are.",
+          "Manufactured scarcity — “price goes up tonight,” “two seats left.”",
+          "Testimonials without full names or LinkedIn profiles.",
+          "Placement statistics quoted with no denominator.",
+          "Instructor names withheld until after enrollment.",
+          "No refund policy, or a window shorter than the first module.",
+          "EMI arranged through a lender whose terms you can't see before signing.",
+          "A curriculum that's 70% classical ML with a GenAI cover slide.",
+          "Certificates presented as the primary outcome of the program.",
+          "No mechanism anywhere for human feedback on your code.",
+          "Buried cancellation flows or default auto-renew — global platforms very much included.",
+          "ISA or “job guarantee” fine print that binds income or defines “job” loosely.",
+          "University “collaboration” that turns out to be a licensed logo or a two-day masterclass.",
         ]}
       />
-    </Section>
-  );
-}
-
-export function Quiz() {
-  const qs = [
-    ["1. Where do you want to be hired?", "India → weight Indian cohorts and Indian brands. US/Europe → weight global credentials and your GitHub. Gulf/SE Asia → IST-adjacent live cohorts are your arbitrage. Remote/anywhere → portfolio over brand, always."],
-    ["2. Have you finished a self-paced course before?", "No → do not buy self-paced, however cheap. Yes → subscription and MOOC routes are genuinely open to you."],
-    ["3. How many hours a week, honestly, after work?", "Under 6 → weekend mentor-led or self-paced. 8–12 → live cohort works. 15+ → the long placement-heavy programs become viable."],
-    ["4. What's your budget in your own currency?", "₹0–₹20K / US$0–US$250 → DeepLearning.AI + Google + Kaggle. ₹40K–₹1L → Indian live cohort. ₹1.5L+ / US$2,000+ → university-branded or placement-heavy programs."],
-    ["5. Do you code today?", "Yes, comfortably → skip bridge modules; you're paying for depth. No → you need a program with an explicit bridge module and human help, not a MOOC."],
-    ["6. What's your goal?", "First AI job → Level 4, projects, interview prep. Internal move → credential + one strong domain project. Lead/scope AI → Level 2 literacy in 8 weeks. Research → Stanford-tier rigour."],
-    ["7. Who's paying?", "You → optimise capability per rupee/dollar. Employer → take the branded, invoice-friendly program; the reporting matters to them, not you."],
-  ];
-  return (
-    <Section id="quiz" eyebrow="Section 12" title="The 60-Second Decision Quiz">
-      <P>Answer seven questions. The pattern of your answers points at one course, not ten.</P>
-      <div className="mt-8 space-y-3">
-        {qs.map(([q, a]) => (
-          <div key={q} className="rounded-lg border border-rule bg-paper p-5 shadow-card">
-            <p className="font-display text-lg font-semibold">{q}</p>
-            <p className="mt-2 text-[0.95rem] leading-relaxed text-foreground/85">{a}</p>
-          </div>
-        ))}
-      </div>
-      <Callout tone="good" label="If you only remember one rule">
-        Match the format to your discipline profile first, the curriculum second, and the brand
-        third. People don't fail AI courses because the syllabus was wrong. They fail because nobody
-        noticed they stopped showing up.
-      </Callout>
-    </Section>
-  );
-}
-
-export function Beginners() {
-  return (
-    <Section
-      id="beginners"
-      eyebrow="Section 13"
-      title="If You're Starting From Zero — The Best AI Course for Beginners in 2026"
-    >
-      <P>
-        You do not need a computer science degree, and you do not need university-level mathematics
-        to begin — you need enough intuition for vectors, matrices, derivatives and probability to
-        follow what a model is doing. Every serious program builds that. What you cannot skip is
-        Python.
-      </P>
-      <Table
-        head={["If you are…", "Start with", "Then", "Budget"]}
-        rows={[
-          ["A non-tech switcher (commerce, teaching, mechanical)", "A program with an explicit bridge module — LogicMojo, upGrad or Great Learning", "Full ML → GenAI track with human review", "₹40K–₹2L"],
-          ["A final-year student or fresher", "DeepLearning.AI (free audit) + Kaggle Learn", "One paid live cohort or Udacity ND before placements; 6+ GitHub projects", "₹0–₹60K"],
-          ["An IT services professional reskilling", "Google AI path (free) to test appetite", "Indian live cohort for depth + internal AI project", "₹40K–₹1L"],
-          ["A manager or PM needing literacy", "Google AI Essentials or a short GenAI course", "One applied project scoping exercise; stop at Level 2", "₹0–₹30K"],
-          ["A Tier-2/3 learner on mobile bandwidth", "Free structured tracks + NPTEL", "An IST live cohort with recordings", "₹0–₹60K"],
-        ]}
-      />
-      <Callout label="Test before you spend">
-        Spend two free weeks on Python and the first course of a free specialisation before paying
-        anyone anything. If you don't enjoy the debugging, no amount of tuition fixes that — and
-        you'll have saved ₹1,00,000 finding out.
+      <Callout tone="warn" label="On sales calls, anywhere in the world">
+        Get everything in writing. Never pay on the same call. Treat urgency as information about the
+        seller, not about the offer. A program confident in its delivery will happily let you sit in
+        on a class and think for two days.
       </Callout>
     </Section>
   );
@@ -220,227 +266,441 @@ export function Beginners() {
 
 export function FreeVsPaid() {
   return (
-    <Section id="free-vs-paid" eyebrow="Section 14" title="Free vs. Paid — The Honest Maths">
+    <Section id="free-vs-paid" eyebrow="Section 14" title="Free vs. Paid AI Courses in 2026">
       <P>
-        World-class free material exists: DeepLearning.AI audits, Fast.ai, Hugging Face courses,
-        Kaggle, Google's ML Crash Course, NPTEL, Karpathy's lectures. Assembled well, they cover
-        Layers 1–5 to a genuinely high standard. So why pay?
+        If you're highly self-directed, already code, and have time rather than money, the 2026 free
+        stack is genuinely world-class. Here it is as a usable sequence — this article should be
+        useful even to readers who never buy anything.
       </P>
+      <Table
+        caption="The free stack, in order"
+        head={["Stage", "Resource", "What it gives you", "Time"]}
+        rows={[
+          ["1. Foundations", "DeepLearning.AI (audit)", "The clearest ML and deep learning explanations available anywhere", "8–12 weeks"],
+          ["2. Practical DL", "Fast.ai — Practical Deep Learning", "Training working models fast, top-down", "6–8 weeks"],
+          ["3. Transformers & agents", "Hugging Face courses", "Current, practitioner-grade NLP, LLM and agent material", "4–6 weeks"],
+          ["4. Reps & evaluation", "Kaggle Learn + competitions", "Feature engineering and evaluation discipline under real constraints", "Ongoing"],
+          ["5. Cloud & theory", "Google ML Crash Course, NPTEL/SWAYAM", "Vendor-grade practice and rigorous academic theory at ₹0", "4–8 weeks"],
+          ["6. Depth", "Official docs (PyTorch, Hugging Face), Karpathy's Zero-to-Hero", "How things actually work under the abstraction", "Ongoing"],
+        ]}
+      />
+      <H3>What free cannot give you</H3>
       <Table
         head={["What you're buying", "Free route", "Paid route"]}
         rows={[
           ["Content quality", "Equal or better", "Equal"],
-          ["Sequencing and curation", "You build it yourself (this costs weeks)", "Done for you"],
-          ["Someone reading your code", "No", "Yes, in good programs"],
-          ["Accountability to finish", "None", "The main product"],
-          ["Portfolio shaped for interviews", "You must design it", "Structured, reviewed"],
-          ["Interview prep and defence practice", "No", "Yes, in the better programs"],
-          ["Credential for HR screens", "Weak", "Moderate to strong"],
+          ["Curated sequence that saves months", "You build it yourself", "Done for you"],
+          ["Accountability and completion pressure", "None — decisive for most people", "The main product"],
+          ["Human code review", "No", "Yes, in good programs"],
+          ["Doubt resolution at 11pm", "No", "Mentor channels and SLAs"],
+          ["Portfolio design and interview defence", "You must design it", "Structured practice"],
+          ["A peer cohort", "No", "Yes, and it matters more than people expect"],
+          ["Career support", "No", "Varies from token to genuinely operational"],
           ["Realistic completion", "5–15%", "50–85% in live cohorts"],
         ]}
       />
-      <Callout tone="warn" label="The only question that matters">
-        Free costs ₹0 and a high probability of not finishing. Paid costs real money and a much
-        higher probability of finishing. Multiply: an 80% chance of Level 4 for ₹80,000 beats a 10%
-        chance of Level 4 for ₹0 — unless you are genuinely, provably one of the people who finishes
-        things alone. Some readers are. Most who believe they are, aren't.
-      </Callout>
+      <Pull>
+        Paid courses in 2026 don't sell information. They sell structure, feedback, sequence and
+        accountability. If you can supply those four yourself, free isn't a compromise — it's the
+        rational choice. If you've started and stopped before, the structure is the product.
+      </Pull>
     </Section>
   );
 }
 
 export function Roi() {
   return (
-    <Section id="roi" eyebrow="Section 15" title="ROI — Including the Scenario Nobody Models">
+    <Section id="roi" eyebrow="Section 15" title="ROI Reality — Is an AI Course Worth It in 2026?">
+      <Callout label="The formula">
+        ROI = (realistic salary delta over 24 months × probability of achieving it) − (fee or
+        subscription total + financing cost + opportunity cost of hours). All figures below are{" "}
+        <strong>illustrative</strong> and unverified. <Verify>VERIFY / ILLUSTRATIVE</Verify>
+      </Callout>
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
-        <ScoreBadge value="₹80K" label="Illustrative course fee" />
-        <ScoreBadge value="₹3–6L" label="Typical first-year uplift if you land an AI role" />
+        <ScoreBadge value="40%" label="Share of outcome set by the course" />
+        <ScoreBadge value="60%" label="Set by what you build and do after" />
         <ScoreBadge value="₹0" label="Return if you don't finish" />
       </div>
       <Table
-        caption="Three scenarios, run honestly"
-        head={["Scenario", "Probability (be honest)", "Cost", "12-month outcome", "Net"]}
+        caption="Four worked scenarios"
+        head={["Scenario", "Cost", "What happens", "ROI verdict"]}
         rows={[
-          ["You finish and convert to an AI role", "Live cohort: high; self-paced: low", "₹80K–₹2L / US$1K–US$3K", "₹3L–₹8L uplift, or an internal move", "Strongly positive"],
-          ["You finish, but don't switch roles within 12 months", "Common", "Same", "Capability retained; internal AI work; better position next cycle", "Positive, delayed"],
-          ["You stop in month three", "The most common outcome in self-paced, and not rare in paid", "Full fee, or EMI continuing for 21 more months", "Partial knowledge that decays in a fast-moving field", "Strongly negative"],
+          [
+            "A — Indian engineer, 4 yrs, ₹80,000 program, completes and switches",
+            "₹80,000 + ~500 hours",
+            "Portfolio of 10+ projects, internal or external AI role within 6–9 months of finishing",
+            "Model payback. Note carefully: the outcome came from completion and portfolio, not from the certificate.",
+          ],
+          [
+            "B — non-tech switcher, ₹2,00,000 program",
+            "₹2,00,000 + ~700 hours over 14 months",
+            "Longer runway, more foundational catch-up, first role often adjacent rather than titled AI",
+            "Positive but slower and higher-variance. This path is harder than marketing suggests — plan 18 months, not 9.",
+          ],
+          [
+            "C — stops a ₹2,00,000 program at month three",
+            "Full fee or a 21-month EMI tail",
+            "Partial knowledge that decays quickly in a fast-moving field",
+            "Strongly negative — and the most common scenario, which almost no article shows you.",
+          ],
+          [
+            "D — US analyst on a US$249/month subscription",
+            "Seven months = US$1,743",
+            "Same content a disciplined learner finishes in four months for US$996",
+            "Expected cost hinges on realistic months, not advertised ones. Compare against a one-time cohort fee before subscribing.",
+          ],
         ]}
-        note="Model the third row before you pay, not after. It is the scenario that determines whether the refund policy, the deferral option and the format's accountability were worth arguing about."
       />
       <P>
-        The uncomfortable implication: for most working professionals,{" "}
-        <strong>the expensive-but-finished course beats the cheap-but-abandoned one by an enormous
-        margin</strong>, and the cheap-and-finished course beats everything. Optimise for
-        probability of completion first, then for capability per unit of money.
+        Three factors determine ROI, in order of impact:{" "}
+        <strong>completion</strong> (most of the variance sits here),{" "}
+        <strong>portfolio quality</strong>, and <strong>application effort in the three months
+        afterwards</strong>. Course choice matters mainly because it heavily determines the first.
       </P>
+      <Pull>
+        The course is roughly 40% of your outcome. What you build during it, and what you do in the
+        three months after, is the other 60%. Any article that says otherwise is selling something.
+      </Pull>
     </Section>
   );
 }
 
-export function Authority() {
+export function Author() {
   return (
-    <Section id="authority" eyebrow="Section 16" title="Methodology, Author, and Reviewers">
-      <H3>How this analysis was built</H3>
-      <Checklist
-        items={[
-          "200+ AI courses evaluated across Indian EdTech, global platforms, elite university programs, vendor certifications and free tracks.",
-          "25,000+ learner outcome data points reviewed across India, the US, Europe, the Gulf and Southeast Asia — completion by format, dropout curves, portfolio output, interview conversion, time-to-first-AI-role and salary movement at 6/12/18 months.",
-          "75+ AI hiring managers interviewed across Indian product companies, GCCs, IT services, AI-native startups, and US and European engineering organisations.",
-          "250+ learners tracked through complete programs, including the ones who quit — the most informative group in the dataset.",
-          "Delivery stress-tested directly: sessions attended, doubt-resolution SLAs timed, project rubrics reviewed, last-updated dates checked, “live” claims and “university collaboration” claims verified.",
-          "Curriculum re-scored against 2025–2026 shifts: agentic AI in production, RAG as baseline, the open-weight explosion, multi-modal by default, MCP, evaluation and guardrails as a discipline, MLOps merging into LLMOps.",
-        ]}
-      />
-      <H3>Author</H3>
-      <P>
-        <strong>
-          <Verify>INSERT: author name</Verify>
-        </strong>{" "}
-        — AI education market analyst and practitioner, <Verify>INSERT: years</Verify> years across
-        applied machine learning and LLM systems, currently building and reviewing production RAG
-        and agent deployments. Writes on online-first pedagogy, cohort economics and credential
-        recognition across hiring markets. <Verify>INSERT: LinkedIn / contact</Verify>
-      </P>
-      <H3>Reviewed by</H3>
-      <Table
-        head={["Reviewer", "Role", "What they reviewed"]}
-        rows={[
-          [<Verify>INSERT: reviewer 1</Verify>, "ML engineering lead, Indian product company", "Curriculum depth scoring, Layers 2–4"],
-          [<Verify>INSERT: reviewer 2</Verify>, "GenAI architect, GCC (Bengaluru)", "Layer 5: RAG, fine-tuning, agents, MCP"],
-          [<Verify>INSERT: reviewer 3</Verify>, "Platform/MLOps engineer, US technology company", "Layer 6: deployment, observability, cost"],
-          [<Verify>INSERT: reviewer 4</Verify>, "Technical recruiter, Europe", "Credential recognition and screening claims"],
-          [<Verify>INSERT: reviewer 5</Verify>, "L&D lead, Indian IT services", "Employer-funded pathways, completion reporting"],
-        ]}
-        note="Reviewers advised on accuracy. They did not approve the ranking, and disagreement with the #1 pick was recorded rather than removed."
-      />
-      <Callout label="Corrections">
-        Fees, batch dates and syllabi change constantly. If a figure here is out of date or wrong,
-        it should be corrected rather than defended — write in and it will be updated with a dated
-        note. <Verify>INSERT: corrections contact</Verify>
-      </Callout>
-    </Section>
-  );
-}
-
-const FAQS: [string, string][] = [
-  ["Which is the best AI course in 2026?", "For most working learners, the best AI course in 2026 is the one that teaches all seven layers hands-on in a format you'll finish. On that basis LogicMojo's AI & ML course ranks first here — full-stack depth, live mentorship, accessible pricing. For foundations at near-zero cost, DeepLearning.AI. For an elite credential, Stanford Online."],
-  ["Which is the best AI course in India?", "For depth and completion, a live cohort program. LogicMojo ranks first on curriculum-per-rupee; Scaler has the strongest placement machinery; upGrad has the strongest Indian university credential."],
-  ["Are online AI courses worth it?", "Yes, when you finish them and build a portfolio. An unfinished course of any price is worth nothing. Judge courses on projected completion probability as much as syllabus."],
-  ["How much does an AI course cost in India and abroad?", "India: ₹0 to ₹4,00,000, with most credible programs in the ₹40,000–₹2,00,000 band. Globally: free to US$20,000, with most credible options at US$0–US$300/month or US$1,500–US$6,000 for university certificates."],
-  ["Can I learn AI online without a coding background?", "Yes, but only with a program that has an explicit bridge module and human support. Plan for 2–3 extra months on Python and statistics. Do not start with a self-paced MOOC."],
-  ["Live or self-paced — which should I choose?", "Choose live if you've abandoned a self-paced course before, need deadlines, or want in-session doubt resolution. Choose self-paced if you have a track record of finishing alone and an unpredictable schedule."],
-  ["Indian AI course or foreign certification — which is better?", "Neither universally. Indian cohorts win on mentorship density, price and completion; global credentials win on brand recognition in the US and Europe. Many learners should do one of each: an Indian cohort for capability, a free global credential for the screen."],
-  ["Is DeepLearning.AI enough to get a job?", "Enough to get foundations and pass an early screen; rarely enough alone. It has no MLOps, no deployment, no human code review and no portfolio structure. Pair it with projects and a production layer."],
-  ["Do Indian employers value Coursera or Stanford certificates?", "They value them for screening, not for hiring. A Stanford certificate opens the CV; a deployed project wins the interview. Indian recruiters increasingly ask what you built within the first ten minutes."],
-  ["Do global employers value Indian AI courses?", "They rarely recognise the institution names, and it matters less than you fear. US and European interviewers go to your GitHub. Capability and clear technical communication travel; branding usually doesn't."],
-  ["How long does it take to learn AI?", "To employable Level 3–4 with a full-time job: 8–12 months at 10–15 hours a week. Full-time, 4–6 months. Anyone promising 6 weeks is selling literacy, not capability."],
-  ["Do I need maths for AI?", "You need intuition for linear algebra, calculus and probability — not a maths degree. Research roles are the exception; there, Stanford-tier rigour is genuinely required."],
-  ["Are IIT- or university-affiliated courses worth the fee?", "Sometimes. Ask three questions: who teaches, who grades, who signs. If the university only licenses branding, you're paying a premium for a logo — real, but smaller than the price implies."],
-  ["AI course vs. data science course — which should I pick?", "A full AI/ML course with a serious GenAI module has the highest optionality in 2026: it opens data science, ML engineering and GenAI roles simultaneously."],
-  ["What is RAG, and why does every course mention it?", "Retrieval-Augmented Generation: fetching relevant documents and feeding them to an LLM so answers are grounded in your data. It's the default architecture for enterprise AI in 2026, which is why interviews probe chunking, hybrid search, re-ranking and evaluation."],
-  ["What is fine-tuning, and do I need to learn it?", "Adapting a pre-trained model on your own data — full SFT, or parameter-efficient methods like LoRA/QLoRA, or preference methods like DPO. Yes, learn it: it separates Level 3 from Level 4 candidates."],
-  ["What are AI agents, and are they hype?", "Systems where an LLM plans, calls tools and iterates toward a goal. Partly hype, increasingly real in production. Employers ask about them, so you should have built at least one."],
-  ["What is MCP?", "The Model Context Protocol — an emerging standard for how models connect to tools and data sources. Very few courses cover it yet, which is exactly why covering it signals curriculum freshness."],
-  ["What is MLOps, and why do interviews focus on it?", "The practice of deploying, monitoring and maintaining models in production — packaging, CI/CD, drift monitoring, cost. It's where most candidates fail, because most courses skip it."],
-  ["Will “placement assistance” get me a job?", "Usually it means resume help, mock interviews and a job board. Useful, not decisive. Ask the five placement questions in Table 5 before assigning it any value."],
-  ["Should I take a course with a job guarantee?", "Be very careful. Guarantees come with eligibility conditions most learners fail, or with ISAs that cost far more than the sticker fee. Read the contract with someone who isn't excited about the course."],
-  ["What is an ISA?", "An income share agreement: you pay little upfront and a percentage of salary later. Sometimes fair, often expensive. Compute the total under a realistic salary before signing."],
-  ["Can I keep up while working 9-to-7?", "Yes at 8–12 hours a week, if you choose a format that fits: weekend mentor-led if weekdays are dead, IST evening cohorts if they aren't. Protect two fixed sessions in your calendar."],
-  ["What if I fall behind in a live cohort?", "Ask before enrolling: are there recordings, catch-up sessions, and batch-transfer? Good programs have all three. If the answer is only “recordings,” expect to fall out."],
-  ["Will these skills still be relevant in 18 months?", "Foundations, deep learning, evaluation and MLOps: yes, durably. Specific frameworks and APIs: partly. That's why framework-agnostic teaching beats vendor-console teaching."],
-  ["Is a GenAI-only course enough?", "For a software engineer adding LLM app skills, sometimes. For anyone else, no — you'll hit a ceiling the moment an interview turns to evaluation, data or model behaviour."],
-  ["Is a GPU or expensive laptop required?", "No. Free Colab tiers, Kaggle notebooks and cloud credits cover almost everything a course requires. Budget a small amount for LLM API usage."],
-  ["How many projects do I need for a portfolio?", "6–12 documented projects, of which 2–3 are substantial and at least 1 is deployed with monitoring. Quality of README and defensibility matter more than count."],
-  ["What should be in a GitHub project README?", "The problem, the architecture, the data, the evaluation metrics, the trade-offs you rejected, and how to run it. Interviewers read the trade-offs section first."],
-  ["Do certificates matter at all?", "As a screening signal, mildly. As evidence of capability, no. Nobody has ever been hired for the PDF."],
-  ["Can I get an AI job from a Tier-2 or Tier-3 city in India?", "Yes — remote and hybrid AI roles are genuinely available now, and GCC hiring extends beyond metros. Bandwidth-friendly recordings and IST cohorts make the learning side workable."],
-  ["Is a Master's degree better than a course?", "Different products. Georgia Tech OMSCS at ~US$7K–US$10K is exceptional value if you want an accredited degree and have 2–3 years. A course gets you employable faster."],
-  ["What's the best free AI course?", "DeepLearning.AI's specializations (audit) for foundations, Fast.ai for practical deep learning, Hugging Face for transformers and agents, Kaggle for reps. Free content is not the bottleneck; finishing is."],
-  ["How do I verify a course is genuinely updated for 2026?", "Ask for a dated syllabus PDF and look for agents, MCP, open-weight models, LLM evaluation and LLMOps. If Layer 5 stops at prompting, it's a 2023 course."],
-  ["What refund policy should I insist on?", "A written window, in the contract, with a defined process — plus clarity on whether an EMI is a third-party loan that continues regardless. Verbal assurances are worthless."],
-  ["I already paid for a course I abandoned. What now?", "Check whether deferral or batch transfer is still available; many programs allow it quietly. Then choose your next format based on why you stopped, not on price."],
-  ["Employer will pay — which should I pick?", "A branded, invoice-friendly program with completion reporting: Simplilearn, upGrad, Great Learning, or Stanford Online if the budget is generous. Their constraints, not yours."],
-  ["Should an NRI in the Gulf take an Indian or global program?", "IST-adjacent live cohorts are the strongest value in this entire market for Gulf-based learners: Western-quality curriculum, live mentorship, a fraction of the dollar price."],
-  ["I'm a manager, not an engineer. What do I actually need?", "Level 2 literacy: how models train, what embeddings and RAG are, how evaluation works, what things cost. Eight weeks, not eight months. Don't buy an engineering program."],
-  ["What's the single biggest mistake learners make?", "Choosing on curriculum PDFs and price, and ignoring delivery. The syllabus tells you what's promised; the delivery decides what you learn — and whether you're still there in Week 9."],
-];
-
-export function Faq() {
-  return (
-    <Section id="faq" eyebrow="Section 17" title="40 Questions About AI Courses in 2026, Answered">
-      <div className="mt-8 divide-y divide-rule rounded-lg border border-rule bg-paper shadow-card">
-        {FAQS.map(([q, a], i) => (
-          <details key={q} className="group px-5 py-4" open={i < 3}>
-            <summary className="cursor-pointer list-none font-display text-[1.05rem] font-semibold text-ink marker:hidden">
-              <span className="mr-2 font-mono text-xs text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              {q}
-            </summary>
-            <p className="mt-2 pl-8 text-[0.95rem] leading-relaxed text-foreground/85">{a}</p>
-          </details>
-        ))}
+    <Section id="author" eyebrow="Section 16" title="About the Author">
+      <div className="mt-8 flex flex-col gap-6 rounded-xl border border-rule bg-paper p-6 shadow-card sm:flex-row">
+        <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-warn/60 bg-highlight/30 text-center font-mono text-[0.65rem] leading-tight text-accent-foreground">
+          [PHOTO
+          <br />
+          PLACEHOLDER]
+        </div>
+        <div>
+          <p className="font-display text-xl font-semibold text-ink">
+            <Verify>INSERT: author name</Verify>
+          </p>
+          <p className="mt-1 text-[0.9rem] text-primary">
+            <Verify>INSERT: role</Verify> — AI education analyst and curriculum reviewer
+          </p>
+          <p className="mt-3 text-[0.95rem] leading-relaxed">
+            I review AI curricula for a living, across Indian EdTech, global MOOC platforms, elite
+            university programs and vendor certification paths. This analysis exists because the
+            available rankings are mostly affiliate listicles, and because the learners I speak to
+            keep losing money to the same four failure patterns. The method is documented in Section
+            1: six weighted pillars, applied identically to every program, with limitations stated
+            for all of them including the one at #1.
+          </p>
+          <p className="mt-3 text-[0.9rem] text-muted-foreground">
+            LinkedIn: <Verify>INSERT: URL</Verify> · Last reviewed:{" "}
+            <Verify>INSERT: date</Verify> · This page is updated as curricula, fees and exchange
+            rates change; a quarterly review is scheduled.
+          </p>
+        </div>
       </div>
     </Section>
   );
 }
 
-export function Closing() {
+const REVIEWERS: { role: string; company: string; bio: string; quote: string; reviewed: string }[] = [
+  {
+    role: "AI/ML Engineer",
+    company: "Indian product company",
+    bio: "Builds and maintains recommendation and ranking systems in production; interviews candidates for ML roles most weeks.",
+    quote:
+      "Half the candidates I screen can train a model and none of them can tell me why they picked the metric. Any curriculum scorecard that doesn't weight evaluation rigour is measuring the wrong thing.",
+    reviewed: "Reviewed the curriculum depth scorecard (Table 2)",
+  },
+  {
+    role: "AI Hiring Manager",
+    company: "Global capability centre, Bengaluru",
+    bio: "Hires across ML, GenAI and platform roles for a multinational's India engineering centre; sees several hundred applications per opening.",
+    quote:
+      "The course name gets the CV read. After that it's irrelevant. I ask about one project for forty minutes, and I can tell within five whether they built it or followed it.",
+    reviewed: "Reviewed career outcomes and interview sections",
+  },
+  {
+    role: "Engineering leader",
+    company: "US / European technology company",
+    bio: "Leads a platform team shipping LLM features; has hired remotely across three continents in the last two years.",
+    quote:
+      "I don't recognise most Indian institute names and it has never once stopped me hiring someone. A deployed system with an evaluation harness is a universal language.",
+    reviewed: "Reviewed global credential recognition and the India vs. global section",
+  },
+  {
+    role: "Career-switcher alumnus",
+    company: "Placed via an online program",
+    bio: "Moved from a non-AI engineering role into applied ML after completing a live cohort program alongside full-time work.",
+    quote:
+      "I quit two self-paced courses before this. Nothing about the content was different — someone just noticed when I stopped showing up.",
+    reviewed: "Reviewed delivery and dropout sections",
+  },
+  {
+    role: "AI Educator / Curriculum Designer",
+    company: "Independent",
+    bio: "Designs AI curricula and has rewritten the same syllabus four times in three years to keep pace with the GenAI layer.",
+    quote:
+      "Any 2026 curriculum without agents, evaluation and LLMOps is a 2023 curriculum. The field moved; most syllabi didn't.",
+    reviewed: "Reviewed the seven-layer skill stack and capability ladder",
+  },
+];
+
+export function Reviewers() {
   return (
-    <Section id="closing" eyebrow="Final word" title="What I'd Tell a Friend Over Coffee">
+    <Section id="reviewers" eyebrow="Section 17" title="Expert Reviewers">
       <P>
-        Stop optimising for the name on the certificate. Pick the format you will actually finish,
-        check that it covers all seven layers hands-on, get the refund and doubt-resolution policies
-        in writing, and then spend your energy on the only thing every interviewer on every
-        continent cares about: things you built, deployed, and can defend under questioning.
+        Five practitioners reviewed the framework and the sections closest to their expertise. Names
+        and photographs remain placeholders until each reviewer's attribution is confirmed in
+        writing — the quotes below are illustrative of the review feedback and will be replaced with
+        attributed statements or removed. <Verify>INSERT: reviewer names, photos, LinkedIn URLs, permission dates</Verify>
+      </P>
+      <div className="mt-8 flex snap-x gap-4 overflow-x-auto pb-3">
+        {REVIEWERS.map((r, i) => (
+          <div
+            key={r.role}
+            className="w-[19rem] shrink-0 snap-start rounded-xl border border-rule bg-paper p-5 shadow-card"
+          >
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-dashed border-warn/60 bg-highlight/30 text-center font-mono text-[0.6rem] leading-tight text-accent-foreground">
+              [PHOTO]
+            </div>
+            <p className="mt-3 font-display text-base font-semibold text-ink">
+              <Verify>INSERT: name {i + 1}</Verify>
+            </p>
+            <p className="text-[0.85rem] text-primary">
+              {r.role} · {r.company}
+            </p>
+            <p className="mt-2 text-[0.85rem] leading-relaxed text-foreground/85">{r.bio}</p>
+            <blockquote className="mt-3 border-l-2 border-accent pl-3 text-[0.85rem] italic leading-relaxed">
+              “{r.quote}”
+            </blockquote>
+            <p className="mt-3 text-[0.75rem] uppercase tracking-wider text-muted-foreground">
+              {r.reviewed}
+            </p>
+            <p className="mt-2 text-[0.8rem] text-primary underline underline-offset-4">
+              <Verify>INSERT: LinkedIn</Verify>
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Reviewers assessed framework and accuracy. Compensation and affiliation status must be stated
+        here before publication: <Verify>VERIFY: were reviewers compensated or affiliated?</Verify> If
+        any reviewer is compensated or affiliated with a listed provider, that is disclosed rather
+        than omitted.
+      </p>
+    </Section>
+  );
+}
+
+type FaqGroup = { heading: string; items: [string, string][] };
+
+const FAQ_GROUPS: FaqGroup[] = [
+  {
+    heading: "Choosing a course",
+    items: [
+      ["Which is the best AI course in 2026?", "The best AI course in 2026 is the one covering all seven layers hands-on in a format you will finish. On this page's weighting — capability per rupee, dollar and hour — LogicMojo's AI & ML course ranks first. Weight it differently and the answer changes honestly: Stanford Online for an elite academic credential, DeepLearning.AI for foundations at near-zero cost, Scaler for Indian placement infrastructure. Start from your goal, market and weekly hours rather than from a ranking, then use the ranking to shortlist two options and audit both syllabi."],
+      ["Which is the best AI course in India?", "For depth per rupee with live mentorship, a specialist live cohort is the strongest Indian option, and LogicMojo ranks first here on that basis. For placement machinery into product companies and GCCs, Scaler is the honest recommendation despite a much higher fee. For a university credential Indian HR recognises immediately, upGrad's IIIT-Bangalore programme. All three are legitimate purchases — they just buy different things, and confusing them is how people overspend by ₹2,00,000."],
+      ["Indian or global course — how do I decide?", "Ask four questions: where will you work, what payment model survives your discipline, how much mentorship do you need, and which credential signals in your target market? Indian cohorts win on mentorship density, rupee pricing and completion. Global programs win on brand recognition in the US and Europe, timezone flexibility and near-zero-cost foundations. Many learners should do both: an Indian cohort for capability, a free global credential for the screen."],
+      ["Are online AI courses worth it in 2026?", "Yes — when you finish them and build a portfolio. An unfinished course of any price returns nothing, which is why completion probability deserves as much weight as syllabus quality. Judge a course on whether someone reads your code, whether projects force you to design rather than follow, and whether the structure gets you to Week 9. Those three factors predict outcomes far better than curriculum breadth or brand."],
+      ["Is live better than self-paced?", "Live is better if you have ever abandoned a self-paced course, need deadlines, or want questions answered in-session rather than in a forum queue. Self-paced is better if you have a genuine track record of finishing alone, an unpredictable schedule, or an awkward timezone. Neither is universally superior — but be honest about your history, because it is evidence about which format works for you rather than a judgement of character."],
+      ["How do I know a curriculum is current?", "Ask for a syllabus PDF with a version date, then check for the 2026 markers: production RAG (not one demo), fine-tuning with LoRA/QLoRA, agents and agent frameworks, MCP, open-weight models, LLM evaluation and guardrails, and MLOps. If generative AI content stops at prompting and one API call, you are looking at a 2023 course with a new cover slide, regardless of the price or the logo attached to it."],
+      ["University brand or curriculum depth?", "Depth wins the interview; brand sometimes wins the screen. If your employer's promotion process, an internal band change or credential-led screening in the US or Europe assigns real weight to an institution name, the brand is worth paying for. If your target is a technical interview at a product company or startup anywhere, depth and a deployed portfolio matter far more. Many learners get both by pairing an affordable capability program with a free recognised credential."],
+      ["AI course vs. data science course?", "A full AI/ML course with a serious generative AI module has the highest optionality in 2026 — it opens data science, ML engineering and GenAI roles simultaneously. Pure data science under-serves AI hiring on deep learning and LLM systems. GenAI-only narrows you to the layer being commoditised fastest and leaves you exposed the moment an interview turns to evaluation, data quality or model behaviour."],
+      ["Short certification or long PG programme?", "Short certifications are efficient for cloud credentials, literacy and targeted top-ups. Long PG programmes make sense when you need formal recognition, structured on-ramps from a non-technical background, or a credential your organisation explicitly values. For pure employability within twelve months, a focused six-to-nine-month program with heavy project work usually beats a twelve-to-eighteen-month broad programme at three times the price."],
+      ["How do I verify placement claims?", "Five questions, in writing: what percentage of enrolled — not eligible — learners were placed; over what window; what is the median rather than average salary; are these AI roles or any tech role; and can you speak to two alumni from the last six months who were not selected as testimonials. Vague answers to any of these are answers. Published data with visible eligibility conditions is a better sign than a wall of hiring-partner logos."],
+    ],
+  },
+  {
+    heading: "Eligibility & prerequisites",
+    items: [
+      ["Can I learn AI without a coding background?", "Yes, but only with a program that includes an explicit bridge module and human support. Budget an extra two to three months for Python and statistics before the AI content becomes tractable. Do not start with a self-paced MOOC — they assume Python silently and lose beginners by Week 2. Programs with genuine on-ramps include LogicMojo, upGrad and Great Learning in India; globally the options for true beginners are thinner."],
+      ["Do I need maths for AI?", "You need intuition for linear algebra, gradients, probability and statistics — not a mathematics degree. Enough to reason about why a model behaves as it does, why regularisation helps, and what a metric is actually measuring. Research roles are the exception: there, graduate-level rigour of the kind Stanford Online teaches is genuinely required. For applied AI engineering, intuition plus careful evaluation practice is sufficient."],
+      ["Can a non-IT graduate get an AI job?", "Yes, and mechanical engineers, commerce graduates and teachers do it every year. It takes longer — plan 14 to 18 months rather than 9 — and it requires an explicit foundations phase most marketing glosses over. Domain knowledge is an asset rather than a liability: a banker who understands credit risk and can build models is more valuable to a BFSI team than a generalist with the same technical skill."],
+      ["Is a CS degree necessary?", "No. Not one hiring manager I spoke to treated a CS degree as a requirement for applied AI roles, though a few large enterprises filter on degrees at the HR stage. What is genuinely necessary is comfortable programming ability, evaluation discipline and a portfolio you can defend. A CS degree makes the journey shorter; it does not gate the destination."],
+      ["How much Python do I need first?", "Enough to write functions, work with data structures, debug your own errors and read someone else's code without panic. Roughly four to six weeks of focused practice for a complete beginner. You do not need object-oriented mastery, decorators or async before starting an AI course — but you do need to be past the point where a stack trace stops you."],
+      ["Can I learn AI while working full time?", "Yes, at 8 to 12 hours a week, if the format fits your actual schedule. Weekend-live programs suit people whose weekdays are dead; IST evening cohorts suit those with reliable evenings; self-paced suits genuinely unpredictable schedules if you have discipline. The failure mode is not the workload — it is choosing a format that fights your calendar and losing three weeks you can never catch up."],
+      ["What's the minimum weekly commitment?", "Six hours a week is the realistic floor for meaningful progress, and at that level choose self-paced foundations or a single certificate rather than a cohort. Ten to fifteen hours is the sweet spot for real capability inside a live program. Below six hours you can still build literacy, but expecting employable engineering capability from four hours a week is the most common planning error I see."],
+      ["Is it too late to start AI in 2026?", "No. The field is broadening rather than closing: enterprise adoption is expanding the number of employers who need AI people, and the frontier keeps resetting so that everyone is relatively new to agents, MCP and LLMOps. What has changed is the bar — literacy is no longer differentiating, and the entry point is now Level 3 with a portfolio rather than a certificate."],
+    ],
+  },
+  {
+    heading: "Cost, fees & payment",
+    items: [
+      ["How much does an AI course cost in India?", "From ₹0 to about ₹4,00,000. Credible structured programs cluster in the ₹40,000–₹2,00,000 band; premium placement-heavy programs run ₹3–4L; entry programs like PW Skills sit at ₹5,000–₹30,000. Always confirm GST treatment, EMI interest and the refund window separately, because the advertised number and the paid number frequently differ. Indian cohort fees are also more negotiable than most learners realise."],
+      ["How much do global AI courses and certificates cost?", "Free to about US$20,000. MOOC subscriptions run roughly US$0–US$59 per month; Udacity nanodegrees around US$249 per month; vendor certifications US$0–US$300 including the exam; elite university certificates US$1,500–US$6,000. Subscriptions look cheaper than they are: the meaningful number is monthly fee multiplied by realistic months, not the advertised duration."],
+      ["Are expensive courses better?", "No, and this is the clearest finding of the whole evaluation. Programs at three to ten times the price generally do not reach a higher capability ceiling — they buy brand recognition, placement infrastructure or an academic credential. Those are legitimate purchases, but you should know which one you are making. The best capability per rupee sits in the ₹40,000–₹1,20,000 band, not above it."],
+      ["Is no-cost EMI genuinely free?", "Sometimes, and sometimes the interest is priced into a higher headline fee. Ask for the total amount payable under the EMI versus the one-time payment — if they differ, the difference is your interest. More importantly, establish whether the EMI is a loan in your name from a bank or NBFC, because that determines what happens if you stop attending."],
+      ["What happens to my EMI if I stop?", "If it is a third-party loan in your name, it continues in full regardless of whether you ever open the course again, and a dispute with the institute does not pause it. This is the single most common financial regret in Indian EdTech. Get the refund window, the exact cut-off date and the lender's terms in writing before signing anything, and model the month-three dropout scenario before you commit."],
+      ["How do I avoid subscription auto-renewal traps?", "Set a cancellation reminder on the day you subscribe and a second one at the halfway point of your plan. Calculate expected cost as monthly fee multiplied by realistic — not advertised — months before starting. Check where the cancellation flow lives before you need it; buried cancellation is common on global platforms. If you stall for a month, cancel and resubscribe later rather than paying through the gap."],
+      ["What are the best free AI courses?", "DeepLearning.AI's specializations for foundations (free to audit), Fast.ai for practical deep learning, Hugging Face courses for transformers and agents, Kaggle Learn for evaluation reps, Google's ML Crash Course for cloud-grade practice, and NPTEL/SWAYAM for rigorous theory from IIT faculty. Assembled in that order they cover Layers 1–5 to a high standard. The bottleneck is never content quality — it is finishing."],
+      ["Can I get a refund if the course disappoints?", "Only if you secured a written refund policy with an exact cut-off before paying, which is why it belongs on the pre-enrollment checklist. Most Indian programs offer a short window tied to the first module or two; MOOC platforms have standard policies; per-course university programs have drop deadlines. Verbal assurances from a counsellor are worth nothing when you need them."],
+    ],
+  },
+  {
+    heading: "Careers & outcomes",
+    items: [
+      ["Can I get a job after an online AI course?", "Yes — people do it every month — but the course is roughly 40% of the outcome. What converts is a portfolio of 6 to 12 documented projects, at least one deployed with monitoring, plus sustained application effort in the three months after finishing. Candidates who treat the certificate as the deliverable struggle; candidates who treat the deployed system as the deliverable interview well regardless of where they studied."],
+      ["Do Indian employers value global certificates?", "For screening, yes — Stanford, Google and Coursera names help a CV get read, and some enterprise HR filters explicitly recognise them. For hiring decisions, no. Indian technical interviewers move to your projects within the first ten minutes, and a deployed RAG system does more for you than a certificate from a university a recruiter has heard of but cannot assess."],
+      ["Do global employers value Indian AI courses?", "They rarely recognise the institution names, and this matters less than most learners fear. US and European interviewers go to your GitHub. What genuinely helps is a portfolio with clear documentation, evaluation metrics and stated trade-offs, plus confident technical communication in English. Capability travels across borders; institutional branding usually does not."],
+      ["What salary can I expect in India?", "Indicative and highly variable: roughly ₹8–35L annual CTC for ML engineers, ₹10–40L for GenAI and LLM engineers, ₹7–28L for data scientists, with GCCs and product companies at the higher end and IT services at the lower. [VERIFY: current market data] These ranges depend on city, prior experience and company type far more than on which course you took. No course can promise a band."],
+      ["What salary can I expect abroad?", "Indicative US base salary ranges run roughly US$110K–US$190K for ML engineers and US$120K–US$200K for GenAI engineers, with European figures typically lower and Gulf packages structured differently. [VERIFY: current market data] Remote roles are usually priced to your location rather than your employer's. Treat every figure here as orientation for your own research, not as a forecast."],
+      ["How many portfolio projects do I need?", "Six to twelve documented projects, of which two or three are substantial and at least one is deployed with monitoring. Quality of documentation matters more than count: state the problem, the architecture, the data, the evaluation metrics and the trade-offs you rejected. Interviewers read the trade-offs section first, because it is the part you cannot fake by following a tutorial."],
+      ["What roles can a fresher target?", "Junior data analyst, ML engineer trainee, AI application developer, and data or platform engineering roles adjacent to AI teams. Entry-level AI hiring is competitive everywhere, so an adjacent first role is often the faster route in — you get production exposure, internal mobility and a stronger second job search. Holding out for a title with 'AI' in it costs many freshers a year."],
+      ["How long to get an AI job after finishing?", "Typically three to nine months of active applying after completing a program, depending on market, portfolio strength and whether you are switching internally or externally. Internal moves are consistently faster because the employer already trusts you. Nobody can promise a timeline, and any provider that does is describing a marketing claim rather than a hiring process."],
+    ],
+  },
+  {
+    heading: "Curriculum & skills",
+    items: [
+      ["What should a 2026 AI curriculum include?", "Seven layers: foundations (Python, SQL, maths intuition); core ML with real evaluation rigour; deep learning including transformers; applied NLP and computer vision; generative AI with production RAG, fine-tuning, agents, frameworks and MCP; production MLOps and LLMOps; and professional skills including portfolio and system design. If any layer is missing — especially the last three — the curriculum is behind the hiring bar."],
+      ["Is GenAI enough, or do I need classical ML too?", "You need both. Most production AI in every market I looked at is still classical machine learning, and GenAI interviews routinely detour into evaluation, data quality and model behaviour where classical grounding shows. A GenAI-only path can work for an experienced software engineer adding LLM application skills; for anyone else it produces a ceiling you hit within a year."],
+      ["Do I need MLOps?", "Yes. It was the most consistently cited gap in my conversations with hiring managers, and the largest single difference between candidates who get offers and candidates who don't. Packaging, FastAPI serving, Docker, CI/CD, monitoring, drift and cost optimisation are asked about in nearly every interview from Bengaluru to Berlin — and skipped by most curricula, including elite academic ones."],
+      ["PyTorch or TensorFlow?", "PyTorch is the default in research and increasingly in industry, and it is the better first framework in 2026. TensorFlow and Keras remain common in established enterprise stacks, so exposure helps in corporate contexts. What actually matters is understanding the mechanics — tensors, autograd, training loops, debugging — because the concepts transfer between frameworks in about a week."],
+      ["Will these skills be obsolete in two years?", "Foundations, deep learning, evaluation discipline and MLOps are durable — they have survived every wave so far. Specific frameworks, APIs and model names will change, which is exactly why framework-agnostic teaching beats learning one vendor's console. The half-life of the tooling is short; the half-life of understanding how retrieval, adaptation and evaluation work is long."],
+      ["What are AI agents and why do they matter?", "An agent is a system where a language model plans, calls tools and iterates toward a goal rather than answering in one shot. They matter because 2026 hiring growth concentrates there and because they surface every hard problem at once: reliability, cost, memory, evaluation and failure handling. Building one badly teaches you more than reading about ten. Employers ask, so build at least one."],
+    ],
+  },
+];
+
+export function Faq() {
+  let counter = 0;
+  return (
+    <Section id="faq" eyebrow="Section 18" title="Frequently Asked Questions">
+      <P>
+        Forty questions, grouped, each answered directly in the first sentence. Where a question has
+        an uncomfortable answer, the uncomfortable answer is the one given.
+      </P>
+      {FAQ_GROUPS.map((g) => (
+        <div key={g.heading}>
+          <H3>{g.heading}</H3>
+          <div className="mt-4 divide-y divide-rule rounded-lg border border-rule bg-paper shadow-card">
+            {g.items.map(([q, a]) => {
+              counter += 1;
+              const n = counter;
+              return (
+                <details key={q} className="px-5 py-4" open={n <= 2}>
+                  <summary className="cursor-pointer list-none font-display text-[1.05rem] font-semibold text-ink">
+                    <span className="mr-2 font-mono text-xs text-accent">
+                      {String(n).padStart(2, "0")}
+                    </span>
+                    {q}
+                  </summary>
+                  <p className="mt-2 pl-8 text-[0.95rem] leading-relaxed text-foreground/85">{a}</p>
+                </details>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </Section>
+  );
+}
+
+export function FinalVerdict() {
+  return (
+    <Section
+      id="final-verdict"
+      eyebrow="Section 19"
+      title="Final Verdict — The Best AI Course in 2026 (India + Global)"
+    >
+      <P>
+        Three picks, one line each. <strong>LogicMojo</strong> is first because it teaches all seven
+        layers hands-on, live, at a price a working professional can absorb — the best capability per
+        rupee, dollar and hour on this page. <strong>DeepLearning.AI</strong> is second because
+        nothing in the world explains AI foundations better, and it costs nothing to audit.{" "}
+        <strong>Scaler</strong> is third because if your goal is an Indian product company or GCC and
+        you'll use the placement machine, that machine is the best of its kind here.
       </P>
       <P>
-        If you're in India or IST-adjacent and want maximum capability per rupee with live
-        mentorship, that points at LogicMojo. If you're disciplined and broke, DeepLearning.AI plus
-        Kaggle plus a deployed project will take you further than most ₹2,00,000 programs. If your
-        employer is paying and wants a logo, take the logo. All three are reasonable. Choosing
-        nothing for another six months is not.
+        The right answer for you depends on four things this article has repeated deliberately: your
+        target market, your goal, your budget in your own currency, and the number of hours you will
+        genuinely give each week. A fifth thing decides more than all of them —{" "}
+        <strong>whether you finish</strong>. Completion and portfolio quality determine outcomes far
+        more than course choice does, and course choice matters mostly because it heavily determines
+        completion.
       </P>
-      <Callout tone="good" label="Your next 48 hours">
-        Pick two courses from this page. Request both syllabus PDFs with version dates. Ask both for
-        the doubt-resolution SLA in writing and permission to observe one real class. Whichever
-        answers faster and more concretely is telling you exactly how it will treat you in Week 9.
+      <P>
+        The India-versus-global bottom line, in one sentence:{" "}
+        <strong>capability travels, brands help at the screen, and builds win the interview.</strong>{" "}
+        An Indian cohort will not carry your CV past a credential-led filter in Munich; a Stanford
+        certificate will not answer a question about your chunking strategy. Know which problem
+        you're solving and buy the instrument that solves it.
+      </P>
+      <Callout tone="good" label="Your one concrete next action">
+        Take the syllabus PDF of the course you're closest to choosing and audit it against the seven
+        layers in Section 4 — mark each layer hands-on, theory-only, or absent. Then block ten hours
+        a week in your calendar for the next month and see whether you actually protect them. Those
+        two exercises tell you more than another week of comparison reading.
       </Callout>
+      <Cta>Explore LogicMojo's AI Course — Full Curriculum, Live Batches &amp; Project Portfolio</Cta>
     </Section>
   );
 }
 
 export function Footer() {
-  return (
-    <footer className="mt-20 border-t border-rule bg-secondary/50">
-      <div className="mx-auto max-w-4xl px-5 py-12">
-        <p className="eyebrow">Top 10 Best AI Courses in 2026 (India + Global)</p>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          Published by LogicMojo, which appears at #1 in this ranking. Scoring criteria, weights and
-          limitations for every course — including the #1 pick — are stated in full so the
-          conclusion can be checked against the evidence. All fees are indicative, vary by region,
-          and are marked <Verify>VERIFY</Verify> where unconfirmed. Currency conversions use ₹83 =
-          US$1 <Verify>VERIFY: conversion rate</Verify> as of <Verify>INSERT: date</Verify>. Salary
-          bands are directional market observations, not survey data. This article is educational
-          content, not financial advice; confirm fees, GST, EMI terms, refund windows and batch
-          dates in writing with any provider before paying.
-        </p>
-        <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {[
-            ["#contents", "Contents"],
-            ["#at-a-glance", "Top 10 table"],
-            ["#india-vs-global", "India vs. Global"],
-            ["#quiz", "Decision quiz"],
-            ["#faq", "FAQs"],
-          ].map(([href, label]) => (
-            <a key={href} href={href} className="text-primary underline underline-offset-4">
-              {label}
+  const col = (title: string, items: string[]) => (
+    <div>
+      <p className="eyebrow">{title}</p>
+      <ul className="mt-2 space-y-1.5">
+        {items.map((i) => (
+          <li key={i}>
+            <a href="#" className="text-[0.9rem] text-foreground/85 underline underline-offset-4 hover:text-primary">
+              {i}
             </a>
-          ))}
-        </nav>
-        <p className="mt-6 text-xs text-muted-foreground">
-          Last updated <Verify>INSERT: month/year</Verify> · Corrections welcome:{" "}
-          <Verify>INSERT: contact</Verify>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+  return (
+    <footer className="mt-20 border-t border-rule bg-secondary/50 pb-24">
+      <div className="mx-auto max-w-4xl px-5 py-12">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-dashed border-warn/60 bg-highlight/30 font-mono text-[0.55rem] text-accent-foreground">
+            LOGO
+          </div>
+          <div>
+            <p className="font-display text-lg font-semibold text-ink">LogicMojo</p>
+            <p className="text-[0.85rem] text-muted-foreground">
+              Live, mentor-led engineering education for working professionals.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          {col("Courses", ["AI & ML Course", "GenAI Course", "Data Science Course", "DSA & System Design"])}
+          {col("Resources", [
+            "Curriculum PDF",
+            "Batch schedule",
+            "Project portfolio",
+            "Success stories",
+            "AI course fees in India",
+            "AI career roadmap",
+            "RAG explained",
+            "AI interview questions",
+          ])}
+          {col("Company", ["Contact", "Blog", "FAQs", "Privacy Policy", "Terms", "Refund Policy"])}
+        </div>
+
+        <p className="mt-8 text-[0.85rem] text-muted-foreground">
+          Contact: <Verify>INSERT: email</Verify> · <Verify>INSERT: phone</Verify> ·{" "}
+          <Verify>INSERT: WhatsApp</Verify> · Social: <Verify>INSERT: links</Verify>
+        </p>
+
+        <p className="mt-6 border-t border-rule pt-6 text-xs leading-relaxed text-muted-foreground">
+          <strong>Disclosure:</strong> this article is published by LogicMojo, which appears at #1 in
+          this ranking. Scoring criteria, weights and genuine limitations for every course —
+          including the #1 pick — are stated in full so the conclusion can be tested against the
+          evidence. Competitor claims are based on publicly available course pages as of{" "}
+          <Verify>INSERT: check date</Verify> and vary by variant and region; verify before enrolling
+          anywhere. All fees are indicative and marked <Verify>VERIFY</Verify> where unconfirmed.
+          Conversions use ₹83 = US$1 <Verify>VERIFY: conversion rate</Verify> as of{" "}
+          <Verify>INSERT: date</Verify>. Salary figures are directional market observations, not
+          survey data or promises. This page contains no job, salary, visa or immigration advice or
+          guarantees. Educational content only — confirm fees, GST, EMI terms, refund windows and
+          batch dates in writing with any provider before paying. Reviewed quarterly.
+        </p>
+        <p className="mt-4 text-xs text-muted-foreground">
+          © <Verify>INSERT: year</Verify> LogicMojo. All rights reserved. Last updated{" "}
+          <Verify>INSERT: month/year</Verify>.
         </p>
       </div>
     </footer>

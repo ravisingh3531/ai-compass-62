@@ -166,3 +166,113 @@ export function ScoreBadge({ value, label }: { value: string; label: string }) {
     </div>
   );
 }
+
+export function Cta({
+  children,
+  href = "#",
+  variant = "primary",
+}: {
+  children: ReactNode;
+  href?: string;
+  variant?: "primary" | "outline";
+}) {
+  return (
+    <a
+      href={href}
+      className={cn(
+        "mt-6 inline-flex items-center gap-2 rounded-lg px-5 py-3 font-sans text-[0.95rem] font-semibold transition-colors",
+        variant === "primary"
+          ? "bg-primary text-primary-foreground hover:bg-primary/90"
+          : "border border-primary text-primary hover:bg-secondary",
+      )}
+    >
+      {children}
+      <span aria-hidden>→</span>
+    </a>
+  );
+}
+
+export type Pillars = {
+  curriculum: string;
+  delivery: string;
+  projects: string;
+  career: string;
+  access: string;
+  value: string;
+  overall: string;
+  ceiling: string;
+};
+
+export function RatingBlock({ p }: { p: Pillars }) {
+  const rows: [string, string][] = [
+    ["Curriculum depth (25%)", p.curriculum],
+    ["Delivery quality (20%)", p.delivery],
+    ["Project rigour (20%)", p.projects],
+    ["Career outcomes (12%)", p.career],
+    ["Accessibility & fit (13%)", p.access],
+    ["Value for money (10%)", p.value],
+  ];
+  return (
+    <div className="mt-6 rounded-xl border-2 border-primary/30 bg-secondary/50 p-5">
+      <p className="eyebrow">Six-pillar rating</p>
+      <dl className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+        {rows.map(([k, v]) => (
+          <div key={k} className="flex items-baseline justify-between gap-3 border-b border-rule/70 pb-1">
+            <dt className="text-[0.88rem] text-foreground/85">{k}</dt>
+            <dd className="font-mono text-[0.88rem] font-medium text-primary">{v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="mt-4 flex flex-wrap items-baseline gap-x-6 gap-y-1">
+        <p className="font-display text-2xl font-bold text-ink">
+          Overall <span className="text-accent">{p.overall}</span>
+        </p>
+        <p className="text-[0.9rem] text-muted-foreground">
+          Capability ceiling: <strong className="text-ink">{p.ceiling}</strong>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function ProsCons({ pros, cons }: { pros: string[]; cons: string[] }) {
+  return (
+    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+      <div className="rounded-lg border border-good/30 bg-good/8 p-5">
+        <p className="eyebrow">Pros</p>
+        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-relaxed">
+          {pros.map((x) => (
+            <li key={x}>{x}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="rounded-lg border border-warn/40 bg-highlight/40 p-5">
+        <p className="eyebrow">Cons</p>
+        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-relaxed">
+          {cons.map((x) => (
+            <li key={x}>{x}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export function StickyCta() {
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-rule bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/85">
+      <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-3">
+        <p className="hidden text-[0.85rem] leading-snug text-muted-foreground sm:block">
+          Ranked #1 on curriculum depth per rupee and hour —{" "}
+          <strong className="text-ink">LogicMojo AI &amp; ML Course</strong>
+        </p>
+        <a
+          href="#logicmojo-deep-dive"
+          className="w-full rounded-lg bg-primary px-4 py-2.5 text-center text-[0.85rem] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+        >
+          See curriculum, batches &amp; projects →
+        </a>
+      </div>
+    </div>
+  );
+}
